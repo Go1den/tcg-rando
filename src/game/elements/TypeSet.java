@@ -18,6 +18,15 @@ public class TypeSet {
         isGrass = false;
     }
 
+    public TypeSet(boolean isFire, boolean isWater, boolean isElectric, boolean isGround, boolean isPsychic, boolean isGrass) {
+        this.isFire = isFire;
+        this.isWater = isWater;
+        this.isElectric = isElectric;
+        this.isGround = isGround;
+        this.isPsychic = isPsychic;
+        this.isGrass = isGrass;
+    }
+
     public boolean isFire() {
         return isFire;
     }
