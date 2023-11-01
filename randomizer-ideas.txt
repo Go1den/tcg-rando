@@ -1,0 +1,70 @@
+Cards
+    -Randomize HP
+        -Totally random
+        -Set ranges for each evolution
+        -Keep HP values the same
+    -Randomize Moves
+        -Totally random
+        -Moves of same type/evolution level, but not necessarily same type
+        -Moves with same energy cost and type
+        -Keep moves the same
+    -Randomize Move Slots
+        -Totally random
+            -Customize odds of 1 or 2 moves
+        -Keep move slots the same
+    -Randomize Move Costs
+        -Totally random
+        -Random cost, but energy is of the same type
+        -Keep move costs the same
+    -Randomize Retreat Costs
+        -Totally random
+        -Totally random, but proportional to evolution level and type
+        -Keep retreat costs the same
+    -Randomize Weaknesses
+        -Totally random, with potential for any number of weaknesses
+            -Customize odds of 0 weaknesses, 1, 2, 3, etc.
+        -Totally random, but same number of weaknesses as base card
+        -Keep weaknesses the same
+    -Randomize Resistances
+        -Totally random, with potential for any number of resistances
+            -Customize odds of 0 resistances, 1, 2, 3, etc.
+        -Totally random, but same number of resistances as base card
+        -Keep resistances the same
+
+Trainer Settings
+    -Randomize trainer names
+        -Totally random (by gender)
+        -Keep trainer names the same
+    -Randomize deck names
+        -Totally random
+        -Shuffle existing deck names
+        -Shuffle existing deck names, but keep type in mind
+        -New names only
+        -Keep trainer names the same
+    -Randomize decks
+        -Completely new decks (not adhering to type)
+        -Completely new decks (adhering to type)
+        -Keep decks the same
+    -Randomize Rewards
+        -Random booster pack
+        -Keep reward booster packs the same
+
+Duel Settings
+    -Randomize prize count (leaders)
+        -Totally random
+        -Set to specific number
+        -Keep prize counts the same
+    -Randomize prize count (non-leaders)
+        -Totally random
+        -Set to specific number
+        -Keep prize counts the same
+
+Booster Settings
+    -Randomize card appearances in booster packs
+        -Totally random
+        -Proportional by type of card
+        -Keep booster packs the same
+
+Filters
+    -Ban certain cards from opponents' decks (or maybe from ever showing up?)
+    -Ban certain moves from ever appearing
