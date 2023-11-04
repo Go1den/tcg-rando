@@ -1,5 +1,9 @@
 package game.elements;
 
+import constants.Type;
+
+import java.util.List;
+
 public class TypeSet {
 
     private boolean isFire;
@@ -8,6 +12,7 @@ public class TypeSet {
     private boolean isGround;
     private boolean isPsychic;
     private boolean isGrass;
+    private boolean isNormal;
 
     public TypeSet() {
         isFire = false;
@@ -16,15 +21,66 @@ public class TypeSet {
         isGround = false;
         isPsychic = false;
         isGrass = false;
+        isNormal = false;
     }
 
-    public TypeSet(boolean isFire, boolean isWater, boolean isElectric, boolean isGround, boolean isPsychic, boolean isGrass) {
+    public TypeSet(List<Type> types) {
+        if (types.contains(Type.FIRE)) {
+            isFire = true;
+        }
+        if (types.contains(Type.WATER)) {
+            isWater = true;
+        }
+        if (types.contains(Type.ELECTRIC)) {
+            isElectric = true;
+        }
+        if (types.contains(Type.GROUND)) {
+            isGround = true;
+        }
+        if (types.contains(Type.PSYCHIC)) {
+            isPsychic = true;
+        }
+        if (types.contains(Type.GRASS)) {
+            isGrass = true;
+        }
+        if (types.contains(Type.NORMAL)) {
+            isNormal = true;
+        }
+    }
+
+    public TypeSet(String types) {
+        if (types.contains(Type.FIRE.getTypeName())) {
+            isFire = true;
+        }
+        if (types.contains(Type.WATER.getTypeName())) {
+            isWater = true;
+        }
+        if (types.contains(Type.ELECTRIC.getTypeName())) {
+            isElectric = true;
+        }
+        if (types.contains(Type.GROUND.getTypeName())) {
+            isGround = true;
+        }
+        if (types.contains(Type.PSYCHIC.getTypeName())) {
+            isPsychic = true;
+        }
+        if (types.contains(Type.GRASS.getTypeName())) {
+            isGrass = true;
+        }
+        if (types.contains(Type.NORMAL.getTypeName())) {
+            isNormal = true;
+        }
+    }
+
+    public TypeSet(boolean isFire, boolean isWater, boolean isElectric, boolean isGround, boolean isPsychic,
+                   boolean isGrass, boolean isNormal) {
         this.isFire = isFire;
         this.isWater = isWater;
         this.isElectric = isElectric;
         this.isGround = isGround;
         this.isPsychic = isPsychic;
         this.isGrass = isGrass;
+        this.isNormal = isNormal;
     }
 
     public boolean isFire() {
@@ -73,5 +129,13 @@ public class TypeSet {
 
     public void setGrass(boolean grass) {
         isGrass = grass;
+    }
+
+    public boolean isNormal() {
+        return isNormal;
+    }
+
+    public void setNormal(boolean normal) {
+        isNormal = normal;
     }
 }

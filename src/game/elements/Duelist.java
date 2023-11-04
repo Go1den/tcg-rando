@@ -6,9 +6,9 @@ import game.elements.card.Card;
 
 import java.util.List;
 
-public class Trainer {
+public class Duelist {
 
-    private int trainerID;
+    private int duelistID;
     private String name;
     private String deckName;
     private List<Card> deck;

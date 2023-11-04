@@ -2,10 +2,10 @@ package constants;
 
 public enum BoosterPack {
 
-    COLOSSEUM (1),
-    MYSTERY (2),
-    LABORATORY (3),
-    EVOLUTION (4);
+    COLOSSEUM(1),
+    MYSTERY(2),
+    LABORATORY(3),
+    EVOLUTION(4);
 
     private final int packID;
 

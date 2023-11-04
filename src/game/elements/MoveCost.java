@@ -20,14 +20,24 @@ public class MoveCost {
         colorless = 0;
     }
 
-    public MoveCost(int fire, int water, int electric, int ground, int psychic, int grass, int colorless) {
-        this.fire = fire;
-        this.water = water;
-        this.electric = electric;
-        this.ground = ground;
-        this.psychic = psychic;
-        this.grass = grass;
-        this.colorless = colorless;
+//    public MoveCost(int fire, int water, int electric, int ground, int psychic, int grass, int colorless) {
+//        this.fire = fire;
+//        this.water = water;
+//        this.electric = electric;
+//        this.ground = ground;
+//        this.psychic = psychic;
+//        this.grass = grass;
+//        this.colorless = colorless;
+//    }
+
+    public MoveCost(String cost) {
+        this.fire = cost.length() - cost.replace("F", "").length();
+        this.water = cost.length() - cost.replace("W", "").length();
+        this.electric = cost.length() - cost.replace("E", "").length();
+        this.ground = cost.length() - cost.replace("D", "").length();
+        this.psychic = cost.length() - cost.replace("P", "").length();
+        this.grass = cost.length() - cost.replace("G", "").length();
+        this.colorless = cost.length() - cost.replace("*", "").length();
     }
 
     public int getFire() {
