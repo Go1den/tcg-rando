@@ -36,9 +36,20 @@ public class PokemonCard extends Card {
         evolvesFromFossil = false;
     }
 
-    public PokemonCard(int cardID, String hex, String name, int level, int evolutionStage, int hp, Move move1,
-                       Move move2, TypeSet weaknesses, TypeSet resistances, MoveCost retreatCost,
-                       List<Integer> evolvesFromCardIDs, List<Integer> evolvesIntoCardIDs, boolean evolvesFromFossil) {
+    public PokemonCard(int cardID,
+                       String hex,
+                       String name,
+                       int level,
+                       int evolutionStage,
+                       int hp,
+                       Move move1,
+                       Move move2,
+                       TypeSet weaknesses,
+                       TypeSet resistances,
+                       MoveCost retreatCost,
+                       List<Integer> evolvesFromCardIDs,
+                       List<Integer> evolvesIntoCardIDs,
+                       boolean evolvesFromFossil) {
         super(cardID, hex, name);
         this.level = level;
         this.evolutionStage = evolutionStage;

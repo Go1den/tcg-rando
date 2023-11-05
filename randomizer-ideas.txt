@@ -65,6 +65,9 @@ Booster Settings
         -Proportional by type of card
         -Keep booster packs the same
 
+Misc.
+    -Randomize Pokedex entries?
+
 Filters
     -Ban certain cards from opponents' decks (or maybe from ever showing up?)
     -Ban certain moves from ever appearing
