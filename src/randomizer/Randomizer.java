@@ -1,16 +1,20 @@
 package randomizer;
 
 import constants.Type;
-import constants.randomized.Prizes;
+import constants.settings.Prizes;
+import constants.settings.Resistance;
+import constants.settings.Weakness;
 import game.elements.*;
-import game.elements.card.Card;
 import game.elements.card.PokemonCard;
-import game.elements.card.TrainerCard;
+import randomizer.duelist.RandomizePrizes;
+import randomizer.pokemon.RandomizeResistance;
 
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
+
+import static randomizer.duelist.RandomizePrizes.randomizePrizes;
+import static randomizer.pokemon.RandomizeResistance.randomizeResistance;
+import static randomizer.pokemon.RandomizeWeakness.randomizeWeakness;
 
 public class Randomizer {
 
@@ -27,8 +31,8 @@ public class Randomizer {
 
         //Randomize Pokemon stuff
         randomizeHP(gameData, random);
-        randomizeWeakness(gameData, random, 10);
-        randomizeResistance(gameData, random, 25);
+        randomizeWeakness(gameData, random, Weakness.RANDOM, 10);
+        randomizeResistance(gameData, random, Resistance.RANDOM, 25);
 
         //Randomize Duelist stuff
         randomizePrizes(gameData, Prizes.RANDOM, random, 0, 0);
@@ -94,70 +98,6 @@ public class Randomizer {
         }
     }
 
-    private void randomizeWeakness(GameData gameData, Random random, int noWeaknessPercent) {
-        for (PokemonCard card : gameData.getAllPokemonCards()) {
-            int rng = random.nextInt(100) + 1;
-            if (rng > noWeaknessPercent) { //hasWeakness
-                int weakness = random.nextInt(6) + 1;
-                switch (weakness) {
-                    case 1:
-                        card.setWeaknesses(new TypeSet(Collections.singletonList(Type.FIRE)));
-                        break;
-                    case 2:
-                        card.setWeaknesses(new TypeSet(Collections.singletonList(Type.WATER)));
-                        break;
-                    case 3:
-                        card.setWeaknesses(new TypeSet(Collections.singletonList(Type.ELECTRIC)));
-                        break;
-                    case 4:
-                        card.setWeaknesses(new TypeSet(Collections.singletonList(Type.GROUND)));
-                        break;
-                    case 5:
-                        card.setWeaknesses(new TypeSet(Collections.singletonList(Type.PSYCHIC)));
-                        break;
-                    default:
-                        card.setWeaknesses(new TypeSet(Collections.singletonList(Type.GRASS)));
-                        break;
-                }
-            } else {
-                card.setWeaknesses(new TypeSet());
-            }
-            gameData.getCardMap().put(card.getCardID(), card);
-        }
-    }
-
-    private void randomizeResistance(GameData gameData, Random random, int noResistancePercent) {
-        for (PokemonCard card : gameData.getAllPokemonCards()) {
-            int rng = random.nextInt(100) + 1;
-            if (rng > noResistancePercent) { //hasResistance
-                int weakness = random.nextInt(6) + 1;
-                switch (weakness) {
-                    case 1:
-                        card.setResistances(new TypeSet(Collections.singletonList(Type.FIRE)));
-                        break;
-                    case 2:
-                        card.setResistances(new TypeSet(Collections.singletonList(Type.WATER)));
-                        break;
-                    case 3:
-                        card.setResistances(new TypeSet(Collections.singletonList(Type.ELECTRIC)));
-                        break;
-                    case 4:
-                        card.setResistances(new TypeSet(Collections.singletonList(Type.GROUND)));
-                        break;
-                    case 5:
-                        card.setResistances(new TypeSet(Collections.singletonList(Type.PSYCHIC)));
-                        break;
-                    default:
-                        card.setResistances(new TypeSet(Collections.singletonList(Type.GRASS)));
-                        break;
-                }
-            } else {
-                card.setResistances(new TypeSet());
-            }
-            gameData.getCardMap().put(card.getCardID(), card);
-        }
-    }
-
 //    private void randomizeMoveCosts(GameData gameData) {
 //        boolean isRandomizingCost = true;
 //        for (Move move : gameData.getAllMoves()) {
@@ -167,18 +107,4 @@ public class Randomizer {
 //            }
 //        }
 //    }
-
-    private void randomizePrizes(GameData gameData, Prizes prizes, Random random, int regularPrizes, int bossPrizes) {
-        if (Prizes.RANDOM.equals(prizes)) {
-            for (Duelist duelist : gameData.getAllDuelists()) {
-                duelist.setPrizes(random.nextInt(6) + 1);
-                gameData.getDuelistMap().put(duelist.getDuelistID(), duelist);
-            }
-        } else if (Prizes.SPECIFY.equals(prizes)) {
-            for (Duelist duelist : gameData.getAllDuelists()) {
-                duelist.setPrizes(duelist.isBoss() ? bossPrizes : regularPrizes);
-                gameData.getDuelistMap().put(duelist.getDuelistID(), duelist);
-            }
-        }
-    }
 }

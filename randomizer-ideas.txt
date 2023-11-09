@@ -27,9 +27,9 @@ Cards
         -Totally random
         -Totally random, but proportional to evolution level and type
         -Keep retreat costs the same
-    -Randomize Weaknesses
+    -Randomize Weakness
         -Random, but keep the same in the same evolution chain
-    -Randomize Resistances
+    -Randomize Resistance
         -Random, but keep the same in the same evolution chain
 
 Trainer Settings
@@ -67,12 +67,12 @@ Filters
 Completed:
 
 Pokemon Settings
-    -Randomize Weaknesses
+    -Randomize Weakness
         -Random weakness with % chance for no weakness
-        -Keep weaknesses the same
-    -Randomize Resistances
+        -Keep weakness the same
+    -Randomize Resistance
         -Random resistance with % chance for no resistance
-        -Keep resistances the same
+        -Keep resistance the same
 
 
 Duel Settings

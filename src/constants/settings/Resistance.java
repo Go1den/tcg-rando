@@ -1,14 +1,14 @@
-package constants.randomized;
+package constants.settings;
 
-public enum Prizes {
+public enum Resistance {
 
     DO_NOT_CHANGE("Do Not Change"),
-    SPECIFY("Specify"),
+    RANDOM_BY_EVOLUTION("Random, But Same For Pokemon in Same Evolution Series"),
     RANDOM("Randomize All");
 
     private final String text;
 
-    Prizes(String text) {
+    Resistance(String text) {
         this.text = text;
     }
 

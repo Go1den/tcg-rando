@@ -14,8 +14,8 @@ public class PokemonCard extends Card {
     private int hp;
     private Move move1;
     private Move move2;
-    private TypeSet weaknesses;
-    private TypeSet resistances;
+    private TypeSet weakness;
+    private TypeSet resistance;
     private MoveCost retreatCost;
     private List<Integer> evolvesFromCardIDs;
     private List<Integer> evolvesIntoCardIDs;
@@ -28,8 +28,8 @@ public class PokemonCard extends Card {
         hp = 0;
         move1 = null;
         move2 = null;
-        weaknesses = null;
-        resistances = null;
+        weakness = null;
+        resistance = null;
         retreatCost = null;
         evolvesFromCardIDs = Collections.EMPTY_LIST;
         evolvesIntoCardIDs = Collections.EMPTY_LIST;
@@ -44,8 +44,8 @@ public class PokemonCard extends Card {
                        int hp,
                        Move move1,
                        Move move2,
-                       TypeSet weaknesses,
-                       TypeSet resistances,
+                       TypeSet weakness,
+                       TypeSet resistance,
                        MoveCost retreatCost,
                        List<Integer> evolvesFromCardIDs,
                        List<Integer> evolvesIntoCardIDs,
@@ -56,8 +56,8 @@ public class PokemonCard extends Card {
         this.hp = hp;
         this.move1 = move1;
         this.move2 = move2;
-        this.weaknesses = weaknesses;
-        this.resistances = resistances;
+        this.weakness = weakness;
+        this.resistance = resistance;
         this.retreatCost = retreatCost;
         this.evolvesFromCardIDs = evolvesFromCardIDs;
         this.evolvesIntoCardIDs = evolvesIntoCardIDs;
@@ -104,20 +104,20 @@ public class PokemonCard extends Card {
         this.move2 = move2;
     }
 
-    public TypeSet getWeaknesses() {
-        return weaknesses;
+    public TypeSet getWeakness() {
+        return weakness;
     }
 
-    public void setWeaknesses(TypeSet weaknesses) {
-        this.weaknesses = weaknesses;
+    public void setWeakness(TypeSet weakness) {
+        this.weakness = weakness;
     }
 
-    public TypeSet getResistances() {
-        return resistances;
+    public TypeSet getResistance() {
+        return resistance;
     }
 
-    public void setResistances(TypeSet resistances) {
-        this.resistances = resistances;
+    public void setResistance(TypeSet resistance) {
+        this.resistance = resistance;
     }
 
     public MoveCost getRetreatCost() {
