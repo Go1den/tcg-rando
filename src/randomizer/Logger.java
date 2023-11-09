@@ -1,5 +1,6 @@
 package randomizer;
 
+import game.elements.Duelist;
 import game.elements.GameData;
 import game.elements.card.PokemonCard;
 
@@ -12,7 +13,15 @@ public class Logger {
         System.out.println("Pokemon Cards:");
         System.out.println();
         for (PokemonCard card : gameData.getAllPokemonCards()) {
-            System.out.println(card.getName() + ", " + card.getHp() + "HP");
+            System.out.println(card.getName() + ", " + card.getHp() + "HP, Weakness: " + card.getWeaknesses().toString()
+                    + ", Resistance: " + card.getResistances().toString());
+        }
+
+        System.out.println();
+        System.out.println("Duelists:");
+        System.out.println();
+        for (Duelist duelist : gameData.getAllDuelists()) {
+            System.out.println(duelist.getName() + ", " + "Prizes: " + duelist.getPrizes());
         }
     }
 }

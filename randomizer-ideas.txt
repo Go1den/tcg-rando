@@ -1,3 +1,8 @@
+Game Settings
+    -Starter decks
+        -Randomize
+        -Keep the same
+
 Cards
     -Randomize HP
         -Totally random
@@ -23,15 +28,9 @@ Cards
         -Totally random, but proportional to evolution level and type
         -Keep retreat costs the same
     -Randomize Weaknesses
-        -Totally random, with potential for any number of weaknesses
-            -Customize odds of 0 weaknesses, 1, 2, 3, etc.
-        -Totally random, but same number of weaknesses as base card
-        -Keep weaknesses the same
+        -Random, but keep the same in the same evolution chain
     -Randomize Resistances
-        -Totally random, with potential for any number of resistances
-            -Customize odds of 0 resistances, 1, 2, 3, etc.
-        -Totally random, but same number of resistances as base card
-        -Keep resistances the same
+        -Random, but keep the same in the same evolution chain
 
 Trainer Settings
     -Randomize trainer names
@@ -63,7 +62,18 @@ Filters
     -Ban certain cards from opponents' decks (or maybe from ever showing up?)
     -Ban certain moves from ever appearing
 
+
+
 Completed:
+
+Pokemon Settings
+    -Randomize Weaknesses
+        -Random weakness with % chance for no weakness
+        -Keep weaknesses the same
+    -Randomize Resistances
+        -Random resistance with % chance for no resistance
+        -Keep resistances the same
+
 
 Duel Settings
     -Randomize prize count (leaders)

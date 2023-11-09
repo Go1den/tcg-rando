@@ -138,4 +138,34 @@ public class TypeSet {
     public void setNormal(boolean normal) {
         isNormal = normal;
     }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        if (isFire) {
+            stringBuilder.append("Fire,");
+        }
+        if (isWater) {
+            stringBuilder.append("Water,");
+        }
+        if (isElectric) {
+            stringBuilder.append("Electric,");
+        }
+        if (isGround) {
+            stringBuilder.append("Ground,");
+        }
+        if (isPsychic) {
+            stringBuilder.append("Psychic,");
+        }
+        if (isGrass) {
+            stringBuilder.append("Grass,");
+        }
+        if (isNormal) {
+            stringBuilder.append("Normal,");
+        }
+        String result = stringBuilder.toString();
+        if (result.isEmpty()) {
+            return "None";
+        }
+        return result.substring(0, result.length() - 1);
+    }
 }

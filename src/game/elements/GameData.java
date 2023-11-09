@@ -1,5 +1,6 @@
 package game.elements;
 
+import constants.Gender;
 import constants.Type;
 import game.elements.card.Card;
 import game.elements.card.EnergyCard;
@@ -41,7 +42,9 @@ public class GameData {
     }
 
     private void populateDuelistMap() {
-
+        duelistMap.put(1, new Duelist(1, "Ronald", "Legendary", Collections.EMPTY_LIST, null, Gender.MALE, 6, true));
+        duelistMap.put(2, new Duelist(2, "Ronald", "Legendary", Collections.EMPTY_LIST, null, Gender.MALE, 6, true));
+        duelistMap.put(3, new Duelist(3, "Ronald", "Legendary", Collections.EMPTY_LIST, null, Gender.MALE, 6, true));
     }
 
     private void populateCardMap() {
