@@ -1,7 +1,7 @@
 Cards
     -Randomize HP
         -Totally random
-        -Set ranges for each evolution
+        -Set ranges for each evolution (DONE)
         -Keep HP values the same
     -Randomize Moves
         -Totally random
@@ -14,7 +14,9 @@ Cards
         -Keep move slots the same
     -Randomize Move Costs
         -Totally random
-        -Random cost, but energy is of the same type
+            -Customize odds of 1, 2, 3, 4 energy required
+        -Totally random, but total amount of energy required stays the same
+        -Total amount of energy is random, but energy is of the same type(s)
         -Keep move costs the same
     -Randomize Retreat Costs
         -Totally random
@@ -50,14 +52,6 @@ Trainer Settings
         -Keep reward booster packs the same
 
 Duel Settings
-    -Randomize prize count (leaders)
-        -Totally random
-        -Set to specific number
-        -Keep prize counts the same
-    -Randomize prize count (non-leaders)
-        -Totally random
-        -Set to specific number
-        -Keep prize counts the same
 
 Booster Settings
     -Randomize card appearances in booster packs
@@ -65,9 +59,14 @@ Booster Settings
         -Proportional by type of card
         -Keep booster packs the same
 
-Misc.
-    -Randomize Pokedex entries?
-
 Filters
     -Ban certain cards from opponents' decks (or maybe from ever showing up?)
     -Ban certain moves from ever appearing
+
+Completed:
+
+Duel Settings
+    -Randomize prize count (leaders)
+        -Totally random
+        -Set to specific number by boss/regular
+        -Keep the same

@@ -1,5 +1,7 @@
 package game.elements;
 
+import constants.Type;
+
 public class MoveCost {
 
     private int fire;
@@ -19,16 +21,6 @@ public class MoveCost {
         grass = 0;
         colorless = 0;
     }
-
-//    public MoveCost(int fire, int water, int electric, int ground, int psychic, int grass, int colorless) {
-//        this.fire = fire;
-//        this.water = water;
-//        this.electric = electric;
-//        this.ground = ground;
-//        this.psychic = psychic;
-//        this.grass = grass;
-//        this.colorless = colorless;
-//    }
 
     public MoveCost(String cost) {
         this.fire = cost.length() - cost.replace("F", "").length();
@@ -94,5 +86,39 @@ public class MoveCost {
 
     public void setColorless(int colorless) {
         this.colorless = colorless;
+    }
+
+    public String getCostAsString() {
+        String result = "";
+        if (fire > 0) {
+            result = addOntoCostString(result, fire, Type.FIRE.getTypeName());
+        }
+        if (water > 0) {
+            result = addOntoCostString(result, water, Type.WATER.getTypeName());
+        }
+        if (electric > 0) {
+            result = addOntoCostString(result, electric, Type.ELECTRIC.getTypeName());
+        }
+        if (ground > 0) {
+            result = addOntoCostString(result, ground, Type.GROUND.getTypeName());
+        }
+        if (psychic > 0) {
+            result = addOntoCostString(result, psychic, Type.PSYCHIC.getTypeName());
+        }
+        if (grass > 0) {
+            result = addOntoCostString(result, grass, Type.GRASS.getTypeName());
+        }
+        if (colorless > 0) {
+            result = addOntoCostString(result, colorless, Type.COLORLESS.getTypeName());
+        }
+        return result;
+    }
+
+    private String addOntoCostString(String result, int amount, String energy) {
+        StringBuilder resultBuilder = new StringBuilder(result);
+        for (int i = 0; i < amount; i++) {
+            resultBuilder.append(energy);
+        }
+        return resultBuilder.toString();
     }
 }
