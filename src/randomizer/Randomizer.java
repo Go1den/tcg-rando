@@ -1,9 +1,6 @@
 package randomizer;
 
-import constants.settings.HP;
-import constants.settings.Prizes;
-import constants.settings.Resistance;
-import constants.settings.Weakness;
+import constants.settings.*;
 import game.elements.GameData;
 
 import java.util.Random;
@@ -11,6 +8,7 @@ import java.util.Random;
 import static randomizer.duelist.RandomizePrizes.randomizePrizes;
 import static randomizer.pokemon.RandomizeHP.randomizeHP;
 import static randomizer.pokemon.RandomizeResistance.randomizeResistance;
+import static randomizer.pokemon.RandomizeType.randomizeType;
 import static randomizer.pokemon.RandomizeWeakness.randomizeWeakness;
 
 public class Randomizer {
@@ -25,8 +23,9 @@ public class Randomizer {
 
         //Randomize Pokemon stuff
         randomizeHP(gameData, random, HP.RANDOM_BY_STAGE);
-        randomizeWeakness(gameData, random, Weakness.RANDOM, 10);
-        randomizeResistance(gameData, random, Resistance.RANDOM, 25);
+        randomizeType(gameData, random, PokemonType.RANDOM_BY_EVOLUTION);
+        randomizeWeakness(gameData, random, Weakness.RANDOM_BY_EVOLUTION, 10);
+        randomizeResistance(gameData, random, Resistance.RANDOM_BY_EVOLUTION, 25);
 
         //Randomize Duelist stuff
         randomizePrizes(gameData, Prizes.RANDOM, random, 0, 0);

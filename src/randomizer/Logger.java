@@ -13,7 +13,10 @@ public class Logger {
         System.out.println("Pokemon Cards:");
         System.out.println();
         for (PokemonCard card : gameData.getAllPokemonCards()) {
-            System.out.println(card.getName() + ", " + card.getHp() + "HP, Weakness: " + card.getWeakness().getTypeName()
+            System.out.println(card.getName()
+                    + ", " + card.getHp() + "HP"
+                    + ", Type: " + card.getType().getTypeName()
+                    + ", Weakness: " + card.getWeakness().getTypeName()
                     + ", Resistance: " + card.getResistance().getTypeName());
         }
 

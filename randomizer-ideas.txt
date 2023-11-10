@@ -62,6 +62,10 @@ Pokemon Settings
     -Randomize HP
         -Set ranges for each evolution (DONE)
         -Keep HP values the same
+    -Randomize Type
+        -Random
+        -Random, but keep the same in the same evolution chain
+        -Keep type the same
     -Randomize Weakness
         -Random weakness with % chance for no weakness
         -Random, but keep the same in the same evolution chain
