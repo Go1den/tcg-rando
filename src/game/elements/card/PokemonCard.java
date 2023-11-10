@@ -1,8 +1,8 @@
 package game.elements.card;
 
+import constants.Type;
 import game.elements.Move;
 import game.elements.MoveCost;
-import game.elements.TypeSet;
 
 import java.util.Collections;
 import java.util.List;
@@ -14,8 +14,9 @@ public class PokemonCard extends Card {
     private int hp;
     private Move move1;
     private Move move2;
-    private TypeSet weakness;
-    private TypeSet resistance;
+    private Type type;
+    private Type weakness;
+    private Type resistance;
     private MoveCost retreatCost;
     private List<Integer> evolvesFromCardIDs;
     private List<Integer> evolvesIntoCardIDs;
@@ -28,6 +29,7 @@ public class PokemonCard extends Card {
         hp = 0;
         move1 = null;
         move2 = null;
+        type = null;
         weakness = null;
         resistance = null;
         retreatCost = null;
@@ -44,8 +46,9 @@ public class PokemonCard extends Card {
                        int hp,
                        Move move1,
                        Move move2,
-                       TypeSet weakness,
-                       TypeSet resistance,
+                       Type type,
+                       Type weakness,
+                       Type resistance,
                        MoveCost retreatCost,
                        List<Integer> evolvesFromCardIDs,
                        List<Integer> evolvesIntoCardIDs,
@@ -56,6 +59,7 @@ public class PokemonCard extends Card {
         this.hp = hp;
         this.move1 = move1;
         this.move2 = move2;
+        this.type = type;
         this.weakness = weakness;
         this.resistance = resistance;
         this.retreatCost = retreatCost;
@@ -104,19 +108,27 @@ public class PokemonCard extends Card {
         this.move2 = move2;
     }
 
-    public TypeSet getWeakness() {
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public Type getWeakness() {
         return weakness;
     }
 
-    public void setWeakness(TypeSet weakness) {
+    public void setWeakness(Type weakness) {
         this.weakness = weakness;
     }
 
-    public TypeSet getResistance() {
+    public Type getResistance() {
         return resistance;
     }
 
-    public void setResistance(TypeSet resistance) {
+    public void setResistance(Type resistance) {
         this.resistance = resistance;
     }
 

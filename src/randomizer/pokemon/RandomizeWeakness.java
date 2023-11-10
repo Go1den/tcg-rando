@@ -6,8 +6,11 @@ import game.elements.GameData;
 import game.elements.TypeSet;
 import game.elements.card.PokemonCard;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class RandomizeWeakness {
 
@@ -20,7 +23,54 @@ public class RandomizeWeakness {
     }
 
     private static void randomizeWeaknessByEvolutionSeries(GameData gameData, Random random, int noWeaknessPercent) {
-        //TODO
+        List<Integer> updatedCardIDs = new ArrayList<>();
+        Type type;
+        for (PokemonCard card : gameData.getAllPokemonCards()) {
+            if (updatedCardIDs.contains(card.getCardID())) {
+                continue;
+            }
+            int rng = random.nextInt(100) + 1;
+            if (rng > noWeaknessPercent) { //hasWeakness
+                int weakness = random.nextInt(6) + 1;
+                switch (weakness) {
+                    case 1:
+                        type = Type.FIRE;
+                        break;
+                    case 2:
+                        type = Type.WATER;
+                        break;
+                    case 3:
+                        type = Type.ELECTRIC;
+                        break;
+                    case 4:
+                        type = Type.GROUND;
+                        break;
+                    case 5:
+                        type = Type.PSYCHIC;
+                        break;
+                    default:
+                        type = Type.GRASS;
+                        break;
+                }
+            } else {
+                type = Type.NONE;
+            }
+            List<Integer> evolutionChainIDs = new ArrayList<>();
+            evolutionChainIDs.add(card.getCardID());
+            PokemonCard tempCard;
+            for (int i = 0; i < evolutionChainIDs.size(); i++) {
+                tempCard = (PokemonCard) gameData.getCardMap().get(evolutionChainIDs.get(i));
+                evolutionChainIDs.addAll(tempCard.getEvolvesFromCardIDs());
+                evolutionChainIDs.addAll(tempCard.getEvolvesIntoCardIDs());
+                evolutionChainIDs = evolutionChainIDs.stream().distinct().collect(Collectors.toList());
+            }
+            for (Integer evolutionChainID : evolutionChainIDs) {
+                tempCard = (PokemonCard) gameData.getCardMap().get(evolutionChainID);
+                tempCard.setWeakness(type);
+                gameData.getCardMap().put(tempCard.getCardID(), tempCard);
+                updatedCardIDs.add(tempCard.getCardID());
+            }
+        }
     }
 
     private static void randomizeWeaknessAtCardLevel(GameData gameData, Random random, int noWeaknessPercent) {
@@ -30,26 +80,26 @@ public class RandomizeWeakness {
                 int weakness = random.nextInt(6) + 1;
                 switch (weakness) {
                     case 1:
-                        card.setWeakness(new TypeSet(Collections.singletonList(Type.FIRE)));
+                        card.setWeakness(Type.FIRE);
                         break;
                     case 2:
-                        card.setWeakness(new TypeSet(Collections.singletonList(Type.WATER)));
+                        card.setWeakness(Type.WATER);
                         break;
                     case 3:
-                        card.setWeakness(new TypeSet(Collections.singletonList(Type.ELECTRIC)));
+                        card.setWeakness(Type.ELECTRIC);
                         break;
                     case 4:
-                        card.setWeakness(new TypeSet(Collections.singletonList(Type.GROUND)));
+                        card.setWeakness(Type.GROUND);
                         break;
                     case 5:
-                        card.setWeakness(new TypeSet(Collections.singletonList(Type.PSYCHIC)));
+                        card.setWeakness(Type.PSYCHIC);
                         break;
                     default:
-                        card.setWeakness(new TypeSet(Collections.singletonList(Type.GRASS)));
+                        card.setWeakness(Type.GRASS);
                         break;
                 }
             } else {
-                card.setWeakness(new TypeSet());
+                card.setWeakness(Type.NONE);
             }
             gameData.getCardMap().put(card.getCardID(), card);
         }
