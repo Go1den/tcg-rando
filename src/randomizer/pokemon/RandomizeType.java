@@ -41,7 +41,7 @@ public class RandomizeType {
                     type = Type.ELECTRIC;
                     break;
                 case 4:
-                    type = Type.GROUND;
+                    type = Type.FIGHTING;
                     break;
                 case 5:
                     type = Type.PSYCHIC;

@@ -16,7 +16,7 @@ public class Utilities {
             case 3:
                 return Type.ELECTRIC;
             case 4:
-                return Type.GROUND;
+                return Type.FIGHTING;
             case 5:
                 return Type.PSYCHIC;
             default:

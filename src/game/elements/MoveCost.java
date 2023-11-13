@@ -9,7 +9,7 @@ public class MoveCost {
     private int fire;
     private int water;
     private int electric;
-    private int ground;
+    private int fighting;
     private int psychic;
     private int grass;
     private int colorless;
@@ -18,7 +18,7 @@ public class MoveCost {
         fire = 0;
         water = 0;
         electric = 0;
-        ground = 0;
+        fighting = 0;
         psychic = 0;
         grass = 0;
         colorless = 0;
@@ -28,7 +28,7 @@ public class MoveCost {
         this.fire = cost.length() - cost.replace("F", "").length();
         this.water = cost.length() - cost.replace("W", "").length();
         this.electric = cost.length() - cost.replace("E", "").length();
-        this.ground = cost.length() - cost.replace("D", "").length();
+        this.fighting = cost.length() - cost.replace("D", "").length();
         this.psychic = cost.length() - cost.replace("P", "").length();
         this.grass = cost.length() - cost.replace("G", "").length();
         this.colorless = cost.length() - cost.replace("*", "").length();
@@ -38,7 +38,7 @@ public class MoveCost {
         fire = 0;
         water = 0;
         electric = 0;
-        ground = 0;
+        fighting = 0;
         psychic = 0;
         grass = 0;
         colorless = 0;
@@ -49,7 +49,7 @@ public class MoveCost {
         fire = 0;
         water = 0;
         electric = 0;
-        ground = 0;
+        fighting = 0;
         psychic = 0;
         grass = 0;
         colorless = 0;
@@ -68,8 +68,8 @@ public class MoveCost {
             case ELECTRIC:
                 electric = cost - colorless;
                 break;
-            case GROUND:
-                ground = cost - colorless;
+            case FIGHTING:
+                fighting = cost - colorless;
                 break;
             case PSYCHIC:
                 psychic = cost - colorless;
@@ -96,7 +96,7 @@ public class MoveCost {
                 electric = cost - colorless;
                 break;
             case 4:
-                ground = cost - colorless;
+                fighting = cost - colorless;
                 break;
             case 5:
                 psychic = cost - colorless;
@@ -131,12 +131,12 @@ public class MoveCost {
         this.electric = electric;
     }
 
-    public int getGround() {
-        return ground;
+    public int getFighting() {
+        return fighting;
     }
 
-    public void setGround(int ground) {
-        this.ground = ground;
+    public void setFighting(int fighting) {
+        this.fighting = fighting;
     }
 
     public int getPsychic() {
@@ -177,8 +177,8 @@ public class MoveCost {
         if (electric > 0) {
             result = addOntoCostString(result, electric, Type.ELECTRIC);
         }
-        if (ground > 0) {
-            result = addOntoCostString(result, ground, Type.GROUND);
+        if (fighting > 0) {
+            result = addOntoCostString(result, fighting, Type.FIGHTING);
         }
         if (psychic > 0) {
             result = addOntoCostString(result, psychic, Type.PSYCHIC);
@@ -201,6 +201,6 @@ public class MoveCost {
     }
 
     private int getTotalCost() {
-        return fire + water + electric + ground + psychic + grass + colorless;
+        return fire + water + electric + fighting + psychic + grass + colorless;
     }
 }

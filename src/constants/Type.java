@@ -5,7 +5,7 @@ public enum Type {
     FIRE("Fire", "F"),
     WATER("Water", "W"),
     ELECTRIC("Electric", "E"),
-    GROUND("Ground", "D"),
+    FIGHTING("Fighting", "D"),
     PSYCHIC("Psychic", "P"),
     GRASS("Grass", "G"),
     NORMAL("Normal", "N"),

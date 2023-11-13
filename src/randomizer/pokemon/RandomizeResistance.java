@@ -75,7 +75,7 @@ public class RandomizeResistance {
                             break;
                         }
                     case 4:
-                        card.setResistance(Type.GROUND);
+                        card.setResistance(Type.FIGHTING);
                         if (!card.getResistance().toString().equals(card.getWeakness().toString())) {
                             break;
                         }

@@ -9,7 +9,7 @@ public class TypeSet {
     private boolean isFire;
     private boolean isWater;
     private boolean isElectric;
-    private boolean isGround;
+    private boolean isFighting;
     private boolean isPsychic;
     private boolean isGrass;
     private boolean isNormal;
@@ -18,7 +18,7 @@ public class TypeSet {
         isFire = false;
         isWater = false;
         isElectric = false;
-        isGround = false;
+        isFighting = false;
         isPsychic = false;
         isGrass = false;
         isNormal = false;
@@ -34,8 +34,8 @@ public class TypeSet {
         if (types.contains(Type.ELECTRIC)) {
             isElectric = true;
         }
-        if (types.contains(Type.GROUND)) {
-            isGround = true;
+        if (types.contains(Type.FIGHTING)) {
+            isFighting = true;
         }
         if (types.contains(Type.PSYCHIC)) {
             isPsychic = true;
@@ -58,8 +58,8 @@ public class TypeSet {
         if (types.contains(Type.ELECTRIC.getTypeName())) {
             isElectric = true;
         }
-        if (types.contains(Type.GROUND.getTypeName())) {
-            isGround = true;
+        if (types.contains(Type.FIGHTING.getTypeName())) {
+            isFighting = true;
         }
         if (types.contains(Type.PSYCHIC.getTypeName())) {
             isPsychic = true;
@@ -72,12 +72,12 @@ public class TypeSet {
         }
     }
 
-    public TypeSet(boolean isFire, boolean isWater, boolean isElectric, boolean isGround, boolean isPsychic,
+    public TypeSet(boolean isFire, boolean isWater, boolean isElectric, boolean isFighting, boolean isPsychic,
                    boolean isGrass, boolean isNormal) {
         this.isFire = isFire;
         this.isWater = isWater;
         this.isElectric = isElectric;
-        this.isGround = isGround;
+        this.isFighting = isFighting;
         this.isPsychic = isPsychic;
         this.isGrass = isGrass;
         this.isNormal = isNormal;
@@ -107,12 +107,12 @@ public class TypeSet {
         isElectric = electric;
     }
 
-    public boolean isGround() {
-        return isGround;
+    public boolean isFighting() {
+        return isFighting;
     }
 
-    public void setGround(boolean ground) {
-        isGround = ground;
+    public void setFighting(boolean fighting) {
+        isFighting = fighting;
     }
 
     public boolean isPsychic() {
@@ -150,8 +150,8 @@ public class TypeSet {
         if (isElectric) {
             stringBuilder.append("Electric,");
         }
-        if (isGround) {
-            stringBuilder.append("Ground,");
+        if (isFighting) {
+            stringBuilder.append("Fighting,");
         }
         if (isPsychic) {
             stringBuilder.append("Psychic,");

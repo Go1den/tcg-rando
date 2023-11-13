@@ -43,7 +43,7 @@ public class RandomizeMoveCost {
                     type = Type.ELECTRIC;
                     break;
                 case 'D':
-                    type = Type.GROUND;
+                    type = Type.FIGHTING;
                     break;
                 case 'P':
                     type = Type.PSYCHIC;
@@ -75,7 +75,7 @@ public class RandomizeMoveCost {
                     type = Type.ELECTRIC;
                     break;
                 case 'D':
-                    type = Type.GROUND;
+                    type = Type.FIGHTING;
                     break;
                 case 'P':
                     type = Type.PSYCHIC;
@@ -107,7 +107,7 @@ public class RandomizeMoveCost {
                     move.setMoveCost(new MoveCost(cost, random, Type.ELECTRIC));
                     break;
                 case 4:
-                    move.setMoveCost(new MoveCost(cost, random, Type.GROUND));
+                    move.setMoveCost(new MoveCost(cost, random, Type.FIGHTING));
                     break;
                 case 5:
                     move.setMoveCost(new MoveCost(cost, random, Type.PSYCHIC));
@@ -135,7 +135,7 @@ public class RandomizeMoveCost {
                     move.setMoveCost(new MoveCost(cost, random, Type.ELECTRIC));
                     break;
                 case 4:
-                    move.setMoveCost(new MoveCost(cost, random, Type.GROUND));
+                    move.setMoveCost(new MoveCost(cost, random, Type.FIGHTING));
                     break;
                 case 5:
                     move.setMoveCost(new MoveCost(cost, random, Type.PSYCHIC));

@@ -24,7 +24,7 @@ public class Randomizer {
         Random random = new Random(seed);
 
         //Randomize Move stuff
-        randomizeMoveCost(gameData, random, PokemonMoveCost.RANDOM_PRESERVE_MOVE_TYPE);
+        randomizeMoveCost(gameData, random, PokemonMoveCost.RANDOM_PRESERVE_TOTAL_COST_AND_TYPE);
 
         //Randomize Pokemon stuff
         randomizeHP(gameData, random, HP.RANDOM_BY_STAGE);
