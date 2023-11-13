@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import static randomizer.utilites.Utilities.getRandomNonColorlessType;
+
 public class RandomizeType {
 
     public static void randomizeType(GameData gameData, Random random, PokemonType type) {
@@ -71,30 +73,7 @@ public class RandomizeType {
 
     private static void randomizeTypeAtCardLevel(GameData gameData, Random random) {
         for (PokemonCard card : gameData.getAllPokemonCards()) {
-            int rng = random.nextInt(6) + 1;
-            switch (rng) {
-                case 1:
-                    card.setType(Type.FIRE);
-                    break;
-                case 2:
-                    card.setType(Type.WATER);
-                    break;
-                case 3:
-                    card.setType(Type.ELECTRIC);
-                    break;
-                case 4:
-                    card.setType(Type.GROUND);
-                    break;
-                case 5:
-                    card.setType(Type.PSYCHIC);
-                    break;
-                case 6:
-                    card.setType(Type.GRASS);
-                    break;
-                default:
-                    card.setType(Type.FIRE);
-                    break;
-            }
+            card.setType(getRandomNonColorlessType(random));
             gameData.getCardMap().put(card.getCardID(), card);
         }
     }

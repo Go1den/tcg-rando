@@ -10,13 +10,19 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import static randomizer.utilites.Utilities.getRandomNonColorlessType;
+
 public class RandomizeResistance {
 
     public static void randomizeResistance(GameData gameData, Random random, Resistance resistance, int noResistancePercent) {
-        if (Resistance.RANDOM.equals(resistance)) {
-            randomizeResistanceAtCardLevel(gameData, random, noResistancePercent);
-        } else if (Resistance.RANDOM_BY_EVOLUTION.equals(resistance)) {
-            randomizeResistanceByEvolutionSeries(gameData, random, noResistancePercent);
+        switch (resistance) {
+            case RANDOM:
+                randomizeResistanceAtCardLevel(gameData, random, noResistancePercent);
+                break;
+            case RANDOM_BY_EVOLUTION:
+                randomizeResistanceByEvolutionSeries(gameData, random, noResistancePercent);
+                break;
+            default:
         }
     }
 
@@ -28,31 +34,7 @@ public class RandomizeResistance {
                 continue;
             }
             int rng = random.nextInt(100) + 1;
-            if (rng > noResistancePercent) { //hasWeakness
-                int weakness = random.nextInt(6) + 1;
-                switch (weakness) {
-                    case 1:
-                        type = Type.FIRE;
-                        break;
-                    case 2:
-                        type = Type.WATER;
-                        break;
-                    case 3:
-                        type = Type.ELECTRIC;
-                        break;
-                    case 4:
-                        type = Type.GROUND;
-                        break;
-                    case 5:
-                        type = Type.PSYCHIC;
-                        break;
-                    default:
-                        type = Type.GRASS;
-                        break;
-                }
-            } else {
-                type = Type.NONE;
-            }
+            type = rng > noResistancePercent ? getRandomNonColorlessType(random) : Type.NONE;
             List<Integer> evolutionChainIDs = new ArrayList<>();
             evolutionChainIDs.add(card.getCardID());
             PokemonCard tempCard;

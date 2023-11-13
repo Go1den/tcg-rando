@@ -6,6 +6,7 @@ import game.elements.GameData;
 import java.util.Random;
 
 import static randomizer.duelist.RandomizePrizes.randomizePrizes;
+import static randomizer.move.RandomizeMoveCost.randomizeMoveCost;
 import static randomizer.pokemon.RandomizeHP.randomizeHP;
 import static randomizer.pokemon.RandomizeResistance.randomizeResistance;
 import static randomizer.pokemon.RandomizeRetreatCost.randomizeRetreatCost;
@@ -21,6 +22,9 @@ public class Randomizer {
     private void randomize(int seed) {
         GameData gameData = new GameData();
         Random random = new Random(seed);
+
+        //Randomize Move stuff
+        randomizeMoveCost(gameData, random, PokemonMoveCost.RANDOM_PRESERVE_MOVE_TYPE);
 
         //Randomize Pokemon stuff
         randomizeHP(gameData, random, HP.RANDOM_BY_STAGE);

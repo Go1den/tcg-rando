@@ -16,9 +16,11 @@ Cards
     -Randomize Move Costs
         -Totally random
             -Customize odds of 1, 2, 3, 4 energy required
-        -Totally random, but total amount of energy required stays the same
-        -Total amount of energy is random, but energy is of the same type(s)
+        -Total amount of energy is random, but energy is of the same type as the original move
+        -Total amount of energy is random, but energy is of the same type as the Pokemon? //might not be possible?
         -Keep move costs the same
+    -Randomize Move Damage
+        -Yikes
 
 Trainer Settings
     -Randomize trainer names
