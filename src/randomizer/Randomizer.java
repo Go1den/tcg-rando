@@ -8,6 +8,7 @@ import java.util.Random;
 import static randomizer.duelist.RandomizePrizes.randomizePrizes;
 import static randomizer.pokemon.RandomizeHP.randomizeHP;
 import static randomizer.pokemon.RandomizeResistance.randomizeResistance;
+import static randomizer.pokemon.RandomizeRetreatCost.randomizeRetreatCost;
 import static randomizer.pokemon.RandomizeType.randomizeType;
 import static randomizer.pokemon.RandomizeWeakness.randomizeWeakness;
 
@@ -26,6 +27,7 @@ public class Randomizer {
         randomizeType(gameData, random, PokemonType.RANDOM_BY_EVOLUTION);
         randomizeWeakness(gameData, random, Weakness.RANDOM_BY_EVOLUTION, 10);
         randomizeResistance(gameData, random, Resistance.RANDOM_BY_EVOLUTION, 25);
+        randomizeRetreatCost(gameData, random, RetreatCost.RANDOM_PRESERVE_TYPE); //must randomize type before retreat cost
 
         //Randomize Duelist stuff
         randomizePrizes(gameData, Prizes.RANDOM, random, 0, 0);

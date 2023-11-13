@@ -19,10 +19,6 @@ Cards
         -Totally random, but total amount of energy required stays the same
         -Total amount of energy is random, but energy is of the same type(s)
         -Keep move costs the same
-    -Randomize Retreat Costs
-        -Totally random
-        -Totally random, but proportional to evolution level and type
-        -Keep retreat costs the same
 
 Trainer Settings
     -Randomize trainer names
@@ -74,6 +70,10 @@ Pokemon Settings
         -Random resistance with % chance for no resistance
         -Random, but keep the same in the same evolution chain
         -Keep resistance the same
+    -Randomize Retreat Costs
+        -Totally random
+        -Totally random, but keeping Pokemon type in mind
+        -Keep retreat costs the same
 
 Duel Settings
     -Randomize prize count (leaders)

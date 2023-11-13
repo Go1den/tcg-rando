@@ -2,23 +2,30 @@ package constants;
 
 public enum Type {
 
-    FIRE("Fire"),
-    WATER("Water"),
-    ELECTRIC("Electric"),
-    GROUND("Ground"),
-    PSYCHIC("Psychic"),
-    GRASS("Grass"),
-    NORMAL("Normal"),
-    COLORLESS("Colorless"),
-    NONE("None");
+    FIRE("Fire", "F"),
+    WATER("Water", "W"),
+    ELECTRIC("Electric", "E"),
+    GROUND("Ground", "D"),
+    PSYCHIC("Psychic", "P"),
+    GRASS("Grass", "G"),
+    NORMAL("Normal", "N"),
+    COLORLESS("Colorless", "*"),
+    NONE("None", "N/A");
 
     private final String typeName;
 
-    Type(String typeName) {
+    private final String typeLetter;
+
+    Type(String typeName, String typeLetter) {
         this.typeName = typeName;
+        this.typeLetter = typeLetter;
     }
 
     public String getTypeName() {
         return typeName;
+    }
+
+    public String getTypeLetter() {
+        return typeLetter;
     }
 }

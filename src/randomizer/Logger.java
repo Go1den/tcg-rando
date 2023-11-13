@@ -17,7 +17,8 @@ public class Logger {
                     + ", " + card.getHp() + "HP"
                     + ", Type: " + card.getType().getTypeName()
                     + ", Weakness: " + card.getWeakness().getTypeName()
-                    + ", Resistance: " + card.getResistance().getTypeName());
+                    + ", Resistance: " + card.getResistance().getTypeName()
+                    + ", Retreat Cost: " + card.getRetreatCost().toString());
         }
 
         System.out.println();
