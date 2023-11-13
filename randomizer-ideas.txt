@@ -13,12 +13,6 @@ Cards
         -Totally random
             -Customize odds of 1 or 2 moves
         -Keep move slots the same
-    -Randomize Move Costs
-        -Totally random
-            -Customize odds of 1, 2, 3, 4 energy required
-        -Total amount of energy is random, but energy is of the same type as the original move
-        -Total amount of energy is random, but energy is of the same type as the Pokemon? //might not be possible?
-        -Keep move costs the same
     -Randomize Move Damage
         -Yikes
 
@@ -82,3 +76,11 @@ Duel Settings
         -Totally random
         -Set to specific number by boss/regular
         -Keep the same
+
+Move Settings
+    -Randomize Move Costs
+        -Totally random
+            -Customize odds of 1, 2, 3, 4 energy required
+        -Total amount of energy is random, but energy is of the same type as the original move
+        -Total amount of energy is random, but energy is of the same type as the Pokemon? //might not be possible?
+        -Keep move costs the same
