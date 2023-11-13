@@ -66,6 +66,8 @@ public class PokemonCard extends Card {
         this.evolvesFromCardIDs = evolvesFromCardIDs;
         this.evolvesIntoCardIDs = evolvesIntoCardIDs;
         this.evolvesFromFossil = evolvesFromFossil;
+        //this.rarity
+        //this.boosterPack
     }
 
     public int getLevel() {

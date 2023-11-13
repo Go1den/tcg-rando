@@ -38,7 +38,21 @@ public class GameData {
         moveMap.put(13, new Move(13, new MoveCost("GG"), "Poisonpowder", 20, 2, 3, 0));
         moveMap.put(14, new Move(14, new MoveCost("***"), "Twineedle", 30, 3, 3, 2));
         moveMap.put(15, new Move(15, new MoveCost("GGG"), "Poison Sting", 40, 3, 3, 0));
-
+        moveMap.put(16, new Move(16, new MoveCost("G"), "Spit Poison", 0, 1, 2, 0));
+        moveMap.put(17, new Move(17, new MoveCost("G*"), "Wrap", 20, 1, 2, 0));
+        moveMap.put(18, new Move(18, new MoveCost("G"), "Terror Strike", 10, 2, 2, 0));
+        moveMap.put(19, new Move(19, new MoveCost("GG*"), "Poison Fang", 20, 2, 2, 0));
+        moveMap.put(20, new Move(20, new MoveCost("G"), "Fury Swipes", 10, 1, 3, 3));
+        moveMap.put(21, new Move(21, new MoveCost("GG"), "Call For Family", 0, 1, 3, 0));
+        moveMap.put(22, new Move(22, new MoveCost("G"), "Supersonic", 0, 2, 3, 0));
+        moveMap.put(23, new Move(23, new MoveCost("G**"), "Double Kick", 30, 2, 3, 2));
+        moveMap.put(24, new Move(24, new MoveCost("G*"), "Boyfriends", 20, 3, 3, 0));
+        moveMap.put(25, new Move(25, new MoveCost("GG**"), "Mega Punch", 50, 3, 3, 0));
+        moveMap.put(26, new Move(26, new MoveCost("G"), "Horn Hazard", 30, 1, 3, 0));
+        moveMap.put(27, new Move(27, new MoveCost("G**"), "Double Kick", 30, 2, 3, 2));
+        moveMap.put(28, new Move(28, new MoveCost("GG**"), "Horn Drill", 50, 2, 3, 0));
+        moveMap.put(29, new Move(29, new MoveCost("G**"), "Thrash", 30, 3, 3, 0));
+        moveMap.put(30, new Move(30, new MoveCost("GGG"), "Toxic", 20, 3, 3, 0));
     }
 
     private void populateDuelistMap() {
@@ -65,6 +79,14 @@ public class GameData {
         cardMap.put(15, new PokemonCard(15, "OF", "Weedle", 12, 1, 40, moveMap.get(11), null, Type.GRASS, Type.FIRE, Type.NONE, new MoveCost("*"), Collections.EMPTY_LIST, Collections.singletonList(16), false));
         cardMap.put(16, new PokemonCard(16, "10", "Kakuna", 23, 2, 80, moveMap.get(12), moveMap.get(13), Type.GRASS, Type.FIRE, Type.NONE, new MoveCost("**"), Collections.singletonList(15), Collections.singletonList(17), false));
         cardMap.put(17, new PokemonCard(17, "11", "Beedrill", 32, 3, 80, moveMap.get(14), moveMap.get(15), Type.GRASS, Type.FIRE, Type.GROUND, new MoveCost(), Collections.singletonList(16), Collections.EMPTY_LIST, false));
+        cardMap.put(18, new PokemonCard(18, "12", "Ekans", 10, 1, 40, moveMap.get(16), moveMap.get(17), Type.GRASS, Type.PSYCHIC, Type.NONE, new MoveCost("*"), Collections.EMPTY_LIST, Collections.singletonList(19), false));
+        cardMap.put(19, new PokemonCard(19, "13", "Arbok", 27, 2, 60, moveMap.get(18), moveMap.get(19), Type.GRASS, Type.PSYCHIC, Type.NONE, new MoveCost("**"), Collections.singletonList(18), Collections.EMPTY_LIST, false));
+        cardMap.put(20, new PokemonCard(20, "14", "Nidoran♀", 13, 1, 60, moveMap.get(20), moveMap.get(21), Type.GRASS, Type.PSYCHIC, Type.NONE, new MoveCost("*"), Collections.EMPTY_LIST, Collections.singletonList(21), false));
+        cardMap.put(21, new PokemonCard(21, "15", "Nidorina", 24, 2, 70, moveMap.get(22), moveMap.get(23), Type.GRASS, Type.PSYCHIC, Type.NONE, new MoveCost("*"), Collections.singletonList(20), Collections.singletonList(22), false));
+        cardMap.put(22, new PokemonCard(22, "16", "Nidoqueen", 43, 3, 90, moveMap.get(24), moveMap.get(25), Type.GRASS, Type.PSYCHIC, Type.NONE, new MoveCost("***"), Collections.singletonList(21), Collections.EMPTY_LIST, false));
+        cardMap.put(23, new PokemonCard(23, "17", "Nidoran♂", 20, 1, 40, moveMap.get(26), null, Type.GRASS, Type.PSYCHIC, Type.NONE, new MoveCost("*"), Collections.EMPTY_LIST, Collections.singletonList(24), false));
+        cardMap.put(24, new PokemonCard(24, "18", "Nidorino", 25, 2, 60, moveMap.get(27), moveMap.get(28), Type.GRASS, Type.PSYCHIC, Type.NONE, new MoveCost("*"), Collections.singletonList(23), Collections.singletonList(25), false));
+        cardMap.put(25, new PokemonCard(25, "19", "Nidoking", 48, 3, 90, moveMap.get(29), moveMap.get(30), Type.GRASS, Type.PSYCHIC, Type.NONE, new MoveCost("***"), Collections.singletonList(24), Collections.EMPTY_LIST, false));
         cardMap.put(195, new TrainerCard(195, "C3", "Professor Oak", true, false, false, false, false));
         cardMap.put(196, new TrainerCard(196, "C4", "Imposter Professor Oak", false, true, false, false, false));
         cardMap.put(197, new TrainerCard(197, "C5", "Bill", true, false, false, false, false));
