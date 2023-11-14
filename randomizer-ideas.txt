@@ -15,6 +15,7 @@ Cards
         -Keep move slots the same
     -Randomize Move Damage
         -Yikes
+    -It is possible to have no weakness (rare) or no resistance (much more common)
 
 Trainer Settings
     -Randomize trainer names
