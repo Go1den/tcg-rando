@@ -37,6 +37,7 @@ public class Randomizer {
         randomizePrizes(gameData, Prizes.RANDOM, random, 0, 0);
 
         Logger.log(gameData, seed);
+        Logger.logPatchNotes(gameData, seed);
     }
 
 //    private List<Card> getRandomizedDeck(GameData gameData, Random random, TypeSet typeSet) {
