@@ -147,8 +147,37 @@ public class GameData {
         moveMap.put(120, new Move(120, new MoveCost("WW**"), "Ice Beam", 30, 2, 2, 0));
         moveMap.put(121, new Move(121, new MoveCost("W"), "Supersonic", 0, 1, 2, 0));
         moveMap.put(122, new Move(122, new MoveCost("W"), "Hide In Shell", 0, 1, 2, 0)); //maybe rename to Hide?
-        moveMap.put(123, new Move(123, new MoveCost("WW"), "Clamp", 30, 1, 2, 0));
-        moveMap.put(124, new Move(124, new MoveCost("WW"), "Spike Cannon", 30, 1, 2, 2));
+        moveMap.put(123, new Move(123, new MoveCost("WW"), "Clamp", 30, 2, 2, 0));
+        moveMap.put(124, new Move(124, new MoveCost("WW"), "Spike Cannon", 30, 2, 2, 2));
+        moveMap.put(125, new Move(125, new MoveCost("W"), "Call For Family", 0, 1, 2, 0));
+        moveMap.put(126, new Move(126, new MoveCost("W*"), "Irongrip", 20, 1, 2, 0));
+        moveMap.put(127, new Move(127, new MoveCost("W"), "Flail", 10, 2, 2, 0));
+        moveMap.put(128, new Move(128, new MoveCost("WW*"), "Crabhammer", 40, 2, 2, 0));
+        moveMap.put(129, new Move(129, new MoveCost("W"), "Smokescreen", 10, 1, 2, 0));
+        moveMap.put(130, new Move(130, new MoveCost("W*"), "Water Gun", 20, 2, 2, 0));
+        moveMap.put(131, new Move(131, new MoveCost("W**"), "Agility", 20, 2, 2, 0));
+        moveMap.put(132, new Move(132, new MoveCost("W"), "Horn Attack", 10, 1, 2, 0));
+        moveMap.put(133, new Move(133, new MoveCost("W"), "Horn Attack", 10, 2, 2, 0));
+        moveMap.put(134, new Move(134, new MoveCost("W*"), "Waterfall", 30, 2, 2, 0));
+        moveMap.put(135, new Move(135, new MoveCost("W"), "Slap", 20, 1, 2, 0));
+        moveMap.put(136, new Move(136, new MoveCost("WW"), "Recover", 0, 2, 2, 0));
+        moveMap.put(137, new Move(137, new MoveCost("W**"), "Star Freeze", 20, 2, 2, 0));
+        moveMap.put(138, new Move(138, new MoveCost("*"), "Tackle", 10, 1, 2, 0));
+        moveMap.put(139, new Move(139, new MoveCost("W"), "Flail", 10, 1, 2, 0));
+        moveMap.put(140, new Move(140, new MoveCost("WWW"), "Dragon Rage", 50, 2, 2, 0));
+        moveMap.put(141, new Move(141, new MoveCost("WWWW"), "Bubblebeam", 40, 2, 2, 0));
+        moveMap.put(142, new Move(142, new MoveCost("W"), "Water Gun", 10, 1, 1, 0));
+        moveMap.put(143, new Move(143, new MoveCost("WW"), "Confuse Ray", 10, 1, 1, 0));
+        moveMap.put(144, new Move(144, new MoveCost("*"), "Focus Energy", 0, 2, 2, 0));
+        moveMap.put(145, new Move(145, new MoveCost("***"), "Bite", 30, 2, 2, 0));
+        moveMap.put(146, new Move(146, new MoveCost("**"), "Quick Attack", 10, 2, 2, 0));
+        moveMap.put(147, new Move(147, new MoveCost("WW*"), "Water Gun", 30, 2, 2, 0));
+        moveMap.put(148, new Move(148, new MoveCost("W"), "Water Gun", 10, 2, 3, 0));
+        moveMap.put(149, new Move(149, new MoveCost("W*"), "Water Gun", 20, 3, 3, 0));
+        moveMap.put(150, new Move(150, new MoveCost("WW"), "Spike Cannon", 30, 3, 3, 2));
+        moveMap.put(151, new Move(151, new MoveCost("WWW"), "Freeze Dry", 30, 1, 1, 0));
+        moveMap.put(152, new Move(152, new MoveCost("WWWW"), "Blizzard", 50, 1, 1, 0));
+        moveMap.put(153, new Move(153, new MoveCost("WWW"), "Ice Breath", 40, 1, 1, 0));
     }
 
     //TODO pokemon powers might need to be listed as moves?
@@ -238,6 +267,23 @@ public class GameData {
         cardMap.put(76, new PokemonCard(76, "4C", "Dewgong", 42, 2, 80, moveMap.get(119), moveMap.get(120), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("***"), singletonList(75), EMPTY_LIST, false));
         cardMap.put(77, new PokemonCard(77, "4D", "Shellder", 8, 1, 30, moveMap.get(121), moveMap.get(122), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(78), false));
         cardMap.put(78, new PokemonCard(78, "4E", "Cloyster", 25, 2, 50, moveMap.get(123), moveMap.get(124), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("**"), singletonList(77), EMPTY_LIST, false));
+        cardMap.put(79, new PokemonCard(79, "4F", "Krabby", 20, 1, 50, moveMap.get(125), moveMap.get(126), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("**"), EMPTY_LIST, singletonList(80), false));
+        cardMap.put(80, new PokemonCard(80, "50", "Kingler", 27, 2, 60, moveMap.get(127), moveMap.get(128), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("***"), singletonList(79), EMPTY_LIST, false));
+        cardMap.put(81, new PokemonCard(81, "51", "Horsea", 19, 1, 40, moveMap.get(129), null, Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost(), EMPTY_LIST, singletonList(82), false));
+        cardMap.put(82, new PokemonCard(82, "52", "Seadra", 23, 2, 60, moveMap.get(130), moveMap.get(131), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("*"), singletonList(81), EMPTY_LIST, false));
+        cardMap.put(83, new PokemonCard(83, "53", "Goldeen", 12, 1, 40, moveMap.get(132), null, Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost(), EMPTY_LIST, singletonList(84), false));
+        cardMap.put(84, new PokemonCard(84, "54", "Seaking", 28, 2, 70, moveMap.get(133), moveMap.get(134), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("*"), singletonList(83), EMPTY_LIST, false));
+        cardMap.put(85, new PokemonCard(85, "55", "Staryu", 15, 1, 40, moveMap.get(135), null, Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(86), false));
+        cardMap.put(86, new PokemonCard(86, "56", "Starmie", 28, 2, 60, moveMap.get(136), moveMap.get(137), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("*"), singletonList(85), EMPTY_LIST, false));
+        cardMap.put(87, new PokemonCard(87, "57", "Magikarp", 8, 1, 30, moveMap.get(138), moveMap.get(139), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(88), false));
+        cardMap.put(88, new PokemonCard(88, "58", "Gyarados", 41, 2, 100, moveMap.get(140), moveMap.get(141), Type.WATER, Type.GRASS, Type.FIGHTING, new MoveCost("***"), singletonList(87), EMPTY_LIST, false));
+        cardMap.put(89, new PokemonCard(89, "59", "Lapras", 31, 1, 80, moveMap.get(142), moveMap.get(143), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("**"), EMPTY_LIST, EMPTY_LIST, false));
+//        cardMap.put(90, new PokemonCard(90, "5A", "Vaporeon", 29, 2, 60, moveMap.get(144), moveMap.get(145), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, EMPTY_LIST, false)); //TODO add Eevee to list
+//        cardMap.put(91, new PokemonCard(91, "5B", "Vaporeon", 42, 2, 80, moveMap.get(146), moveMap.get(147), Type.WATER, Type.ELECTRIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, EMPTY_LIST, false)); //TODO add Eevee to list
+        cardMap.put(92, new PokemonCard(92, "5C", "Omanyte", 19, 2, 40, moveMap.get(148), null, Type.WATER, Type.GRASS, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(93), true));
+        cardMap.put(93, new PokemonCard(93, "5D", "Omastar", 32, 3, 70, moveMap.get(149), moveMap.get(150), Type.WATER, Type.GRASS, Type.NONE, new MoveCost("*"), singletonList(92), EMPTY_LIST, true));
+        cardMap.put(94, new PokemonCard(94, "5E", "Articuno", 35, 1, 70, moveMap.get(151), moveMap.get(152), Type.WATER, Type.NONE, Type.FIGHTING, new MoveCost("**"), EMPTY_LIST, EMPTY_LIST, false));
+        cardMap.put(95, new PokemonCard(95, "5F", "Articuno", 37, 1, 100, moveMap.get(153), moveMap.get(154), Type.WATER, Type.NONE, Type.FIGHTING, new MoveCost("**"), EMPTY_LIST, EMPTY_LIST, false));
         cardMap.put(195, new TrainerCard(195, "C3", "Professor Oak", true, false, false, false, false));
         cardMap.put(196, new TrainerCard(196, "C4", "Imposter Professor Oak", false, true, false, false, false));
         cardMap.put(197, new TrainerCard(197, "C5", "Bill", true, false, false, false, false));
