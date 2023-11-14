@@ -256,6 +256,40 @@ public class GameData {
         moveMap.put(229, new Move(229, new MoveCost("DD"), "Sharp Sickle", 30, 3, 3, 0));
         moveMap.put(230, new Move(230, new MoveCost("DDDD"), "Absorb", 40, 3, 3, 0));
         moveMap.put(231, new Move(231, new MoveCost("***"), "Wing Attack", 30, 2, 2, 0));
+        moveMap.put(232, new Move(232, new MoveCost("P"), "Psyshock", 10, 1, 3, 0));
+        moveMap.put(233, new Move(233, new MoveCost("PP"), "Recover", 0, 2, 3, 0));
+        moveMap.put(234, new Move(234, new MoveCost("PP*"), "Super Psy", 50, 2, 3, 0));
+        moveMap.put(235, new Move(235, new MoveCost("PPP"), "Confuse Ray", 30, 3, 3, 0));
+        moveMap.put(236, new Move(236, new MoveCost("*"), "Headbutt", 10, 1, 2, 0));
+        moveMap.put(237, new Move(237, new MoveCost("PP"), "Amnesia", 0, 1, 2, 0));
+        moveMap.put(238, new Move(238, new MoveCost("*"), "Spacing Out", 0, 1, 2, 0));
+        moveMap.put(239, new Move(239, new MoveCost("PP"), "Scavenge", 0, 1, 2, 0));
+        moveMap.put(240, new Move(240, new MoveCost("PP"), "Psyshock", 20, 2, 2, 0));
+        moveMap.put(241, new Move(241, new MoveCost("P"), "Sleeping Gas", 0, 1, 3, 0));
+        moveMap.put(242, new Move(242, new MoveCost("P*"), "Destiny Bond", 0, 1, 3, 0));
+        moveMap.put(243, new Move(243, new MoveCost("P"), "Lick", 10, 1, 3, 0));
+        moveMap.put(244, new Move(244, new MoveCost("PP"), "Energy Conversion", 0, 1, 3, 0));
+        moveMap.put(245, new Move(245, new MoveCost("P*"), "Nightmare", 10, 2, 3, 0));
+        moveMap.put(246, new Move(246, new MoveCost("P"), "Hypnosis", 0, 2, 3, 0));
+        moveMap.put(247, new Move(247, new MoveCost("PP"), "Dream Eater", 50, 2, 3, 0));
+        moveMap.put(248, new Move(248, new MoveCost("PPP"), "Dark Mind", 30, 3, 3, 0));
+        moveMap.put(249, new Move(249, new MoveCost("*"), "Pound", 10, 1, 2, 0));
+        moveMap.put(250, new Move(250, new MoveCost("PP"), "Confuse Ray", 10, 1, 2, 0));
+        moveMap.put(251, new Move(251, new MoveCost("P"), "Prophecy", 0, 2, 2, 0));
+        moveMap.put(252, new Move(252, new MoveCost("PPP"), "Dark Mind", 30, 2, 2, 0));
+        moveMap.put(253, new Move(253, new MoveCost("P*"), "Meditate", 10, 1, 1, 0));
+        moveMap.put(254, new Move(254, new MoveCost("P"), "Doubleslap", 10, 1, 1, 2));
+        moveMap.put(255, new Move(255, new MoveCost("PP*"), "Meditate", 20, 1, 1, 0));
+        moveMap.put(256, new Move(256, new MoveCost("P*"), "Psychic", 10, 1, 1, 0));
+        moveMap.put(257, new Move(257, new MoveCost("PP"), "Barrier", 0, 1, 1, 0));
+        moveMap.put(258, new Move(258, new MoveCost("P"), "Energy Absorption", 0, 1, 1, 0));
+        moveMap.put(259, new Move(259, new MoveCost("PP*"), "Psyburn", 40, 1, 1, 0));
+        moveMap.put(260, new Move(260, new MoveCost("P"), "Energy Absorption", 0, 1, 1, 0));
+        moveMap.put(261, new Move(261, new MoveCost("PP*"), "Psyburn", 40, 1, 1, 0));
+        moveMap.put(262, new Move(262, new MoveCost("P"), "Psyshock", 10, 1, 1, 0));
+        moveMap.put(263, new Move(263, new MoveCost("P*"), "Mystery Attack", 0, 1, 1, 0)); //random damage with random effects lol
+        moveMap.put(264, new Move(264, new MoveCost("P"), "Psywave", 10, 1, 1, 0)); //10x energy cards on opponent
+        moveMap.put(265, new Move(265, new MoveCost("PP"), "Devolution Beam", 0, 1, 1, 0));
     }
 
     //TODO pokemon powers might need to be listed as moves?
@@ -408,6 +442,27 @@ public class GameData {
         cardMap.put(139, new PokemonCard(139, "8B", "Kabuto", 9, 2, 30, moveMap.get(228), null, Type.FIGHTING, Type.GRASS, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(140), true));
         cardMap.put(140, new PokemonCard(140, "8C", "Kabutops", 30, 3, 60, moveMap.get(229), moveMap.get(230), Type.FIGHTING, Type.GRASS, Type.NONE, new MoveCost("*"), singletonList(139), EMPTY_LIST, true));
         cardMap.put(141, new PokemonCard(141, "8D", "Aerodactyl", 28, 2, 60, moveMap.get(231), null, Type.FIGHTING, Type.GRASS, Type.FIGHTING, new MoveCost("**"), EMPTY_LIST, EMPTY_LIST, true));
+        cardMap.put(142, new PokemonCard(142, "8E", "Abra", 10, 1, 30, moveMap.get(232), null, Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost(), EMPTY_LIST, singletonList(143), false));
+        cardMap.put(143, new PokemonCard(143, "8F", "Kadabra", 38, 2, 60, moveMap.get(233), moveMap.get(234), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("***"), singletonList(142), singletonList(144), false));
+        cardMap.put(144, new PokemonCard(144, "90", "Alakazam", 42, 2, 80, moveMap.get(235), null, Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("***"), singletonList(143), EMPTY_LIST, false));
+        cardMap.put(145, new PokemonCard(145, "91", "Slowpoke", 9, 1, 40, moveMap.get(236), moveMap.get(237), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(147), false));
+        cardMap.put(146, new PokemonCard(146, "92", "Slowpoke", 18, 1, 50, moveMap.get(238), moveMap.get(239), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(147), false));
+        cardMap.put(147, new PokemonCard(147, "93", "Slowbro", 26, 2, 60, moveMap.get(240), null, Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("*"), Arrays.asList(145, 146), EMPTY_LIST, false));
+        cardMap.put(148, new PokemonCard(148, "94", "Gastly", 8, 1, 30, moveMap.get(241), moveMap.get(242), Type.PSYCHIC, Type.NONE, Type.FIGHTING, new MoveCost(), EMPTY_LIST, Arrays.asList(150, 151), false));
+        cardMap.put(149, new PokemonCard(149, "95", "Gastly", 17, 1, 50, moveMap.get(243), moveMap.get(244), Type.PSYCHIC, Type.NONE, Type.FIGHTING, new MoveCost(), EMPTY_LIST, Arrays.asList(150, 151), false));
+        cardMap.put(150, new PokemonCard(150, "96", "Haunter", 17, 2, 50, moveMap.get(245), null, Type.PSYCHIC, Type.NONE, Type.FIGHTING, new MoveCost(), Arrays.asList(148, 149), singletonList(152), false));
+        cardMap.put(151, new PokemonCard(151, "97", "Haunter", 22, 2, 60, moveMap.get(246), moveMap.get(247), Type.PSYCHIC, Type.NONE, Type.FIGHTING, new MoveCost("*"), Arrays.asList(148, 149), singletonList(152), false));
+        cardMap.put(152, new PokemonCard(152, "98", "Gengar", 38, 3, 80, moveMap.get(248), null, Type.PSYCHIC, Type.NONE, Type.FIGHTING, new MoveCost("*"), Arrays.asList(150, 151), EMPTY_LIST, false));
+        cardMap.put(153, new PokemonCard(153, "99", "Drowzee", 12, 1, 50, moveMap.get(249), moveMap.get(250), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(154), false));
+        cardMap.put(154, new PokemonCard(154, "9A", "Hypno", 36, 2, 90, moveMap.get(251), moveMap.get(252), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("**"), singletonList(153), EMPTY_LIST, false));
+        cardMap.put(155, new PokemonCard(155, "9B", "Mr. Mime", 28, 1, 40, moveMap.get(253), null, Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, EMPTY_LIST, false));
+        cardMap.put(156, new PokemonCard(156, "9C", "Jynx", 23, 1, 70, moveMap.get(254), moveMap.get(255), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("**"), EMPTY_LIST, EMPTY_LIST, false));
+        cardMap.put(157, new PokemonCard(157, "9D", "Mewtwo", 53, 1, 60, moveMap.get(256), moveMap.get(257), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("***"), EMPTY_LIST, EMPTY_LIST, false));
+        cardMap.put(158, new PokemonCard(158, "9E", "Mewtwo", 60, 1, 70, moveMap.get(258), moveMap.get(259), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("**"), EMPTY_LIST, EMPTY_LIST, false));
+        cardMap.put(159, new PokemonCard(159, "9F", "Mewtwo", 60, 1, 70, moveMap.get(260), moveMap.get(261), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("**"), EMPTY_LIST, EMPTY_LIST, false));
+        cardMap.put(160, new PokemonCard(160, "A0", "Mew", 8, 1, 40, moveMap.get(262), null, Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, EMPTY_LIST, false));
+        cardMap.put(161, new PokemonCard(161, "A1", "Mew", 15, 1, 50, moveMap.get(263), null, Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost(), EMPTY_LIST, EMPTY_LIST, false));
+        cardMap.put(162, new PokemonCard(162, "A2", "Mew", 23, 1, 50, moveMap.get(264), moveMap.get(265), Type.PSYCHIC, Type.PSYCHIC, Type.NONE, new MoveCost("*"), EMPTY_LIST, EMPTY_LIST, false));
 
         cardMap.put(195, new TrainerCard(195, "C3", "Professor Oak", true, false, false, false, false));
         cardMap.put(196, new TrainerCard(196, "C4", "Imposter Professor Oak", false, true, false, false, false));
