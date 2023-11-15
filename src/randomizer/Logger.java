@@ -2,7 +2,7 @@ package randomizer;
 
 import game.elements.Duelist;
 import game.elements.GameData;
-import game.elements.Move;
+import game.elements.UsableMove;
 import game.elements.card.PokemonCard;
 
 public class Logger {
@@ -17,8 +17,8 @@ public class Logger {
         System.out.println();
         System.out.println("Changed Moves:");
         System.out.println();
-        for (Move move : gameData.getAllMoves()) {
-            Move originalMove = originalGameData.getMoveMap().get(move.getMoveID());
+        for (UsableMove move : gameData.getAllUsableMoves()) {
+            UsableMove originalMove = (UsableMove) originalGameData.getMoveMap().get(move.getMoveID());
             if (!originalMove.getMoveCost().toString().equals(move.getMoveCost().toString())) {
                 System.out.println(originalMove.getName() + " move cost changed from " + originalMove.getMoveCost().toString() + " to " + move.getMoveCost().toString());
             }
@@ -52,7 +52,7 @@ public class Logger {
         System.out.println();
         System.out.println("Moves:");
         System.out.println();
-        for (Move move : gameData.getAllMoves()) {
+        for (UsableMove move : gameData.getAllUsableMoves()) {
             System.out.println(move.getName()
                     + ", Cost: " + move.getMoveCost().toString());
         }

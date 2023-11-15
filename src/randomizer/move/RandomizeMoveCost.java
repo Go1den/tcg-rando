@@ -2,9 +2,7 @@ package randomizer.move;
 
 import constants.Type;
 import constants.settings.PokemonMoveCost;
-import game.elements.GameData;
-import game.elements.Move;
-import game.elements.MoveCost;
+import game.elements.*;
 
 import java.util.Random;
 
@@ -29,7 +27,7 @@ public class RandomizeMoveCost {
     }
 
     private static void randomizeMoveCostsPreserveMoveType(GameData gameData, Random random) {
-        for (Move move : gameData.getAllMoves()) {
+        for (UsableMove move : gameData.getAllUsableMoves()) {
             int cost = random.nextInt(4) + 1;
             Type type;
             switch (move.getMoveCost().toString().charAt(0)) {
@@ -61,7 +59,7 @@ public class RandomizeMoveCost {
     }
 
     private static void randomizeMoveCostsPreserveTotalCostAndType(GameData gameData, Random random) {
-        for (Move move : gameData.getAllMoves()) {
+        for (UsableMove move : gameData.getAllUsableMoves()) {
             int cost = move.getMoveCost().toString().length();
             Type type;
             switch (move.getMoveCost().toString().charAt(0)) {
@@ -93,7 +91,7 @@ public class RandomizeMoveCost {
     }
 
     private static void randomizeMoveCostsPreserveTotalCost(GameData gameData, Random random) {
-        for (Move move : gameData.getAllMoves()) {
+        for (UsableMove move : gameData.getAllUsableMoves()) {
             int cost = move.getMoveCost().toString().length();
             int rng = random.nextInt(6) + 1;
             switch (rng) {
@@ -121,7 +119,7 @@ public class RandomizeMoveCost {
     }
 
     private static void randomizeMoveCosts(GameData gameData, Random random) {
-        for (Move move : gameData.getAllMoves()) {
+        for (UsableMove move : gameData.getAllUsableMoves()) {
             int cost = random.nextInt(4) + 1;
             int rng = random.nextInt(6) + 1;
             switch (rng) {

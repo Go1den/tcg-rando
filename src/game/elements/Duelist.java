@@ -10,8 +10,7 @@ public class Duelist {
 
     private int duelistID;
     private String name;
-    private String deckName;
-    private List<Card> deck;
+    private Deck deck;
     private BoosterPack reward;
     private Gender gender;
     private int prizes; //How many prizes needed to beat them in a duel
@@ -19,11 +18,10 @@ public class Duelist {
 
     public Duelist() {}
 
-    public Duelist(int duelistID, String name, String deckName, List<Card> deck, BoosterPack reward,
+    public Duelist(int duelistID, String name, Deck deck, BoosterPack reward,
                    Gender gender, int prizes, boolean isBoss) {
         this.duelistID = duelistID;
         this.name = name;
-        this.deckName = deckName;
         this.deck = deck;
         this.reward = reward;
         this.gender = gender;
@@ -47,19 +45,11 @@ public class Duelist {
         this.name = name;
     }
 
-    public String getDeckName() {
-        return deckName;
-    }
-
-    public void setDeckName(String deckName) {
-        this.deckName = deckName;
-    }
-
-    public List<Card> getDeck() {
+    public Deck getDeck() {
         return deck;
     }
 
-    public void setDeck(List<Card> deck) {
+    public void setDeck(Deck deck) {
         this.deck = deck;
     }
 

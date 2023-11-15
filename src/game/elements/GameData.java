@@ -8,6 +8,7 @@ import game.elements.card.PokemonCard;
 import game.elements.card.TrainerCard;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static java.util.Collections.EMPTY_LIST;
 import static java.util.Collections.singletonList;
@@ -17,11 +18,19 @@ public class GameData {
     private Map<Integer, Move> moveMap = new HashMap<>();
     private Map<Integer, Duelist> duelistMap = new HashMap<>();
     private Map<Integer, Card> cardMap = new HashMap<>();
+//    private Deck starterDeck1;
+//    private Deck starterDeck2;
+//    private Deck starterDeck3;
 
     public GameData() {
         populateMoveMap();
         populateDuelistMap();
         populateCardMap();
+//        starterDeck1 = new Deck(Arrays.asList(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5,
+//                48, 48, 49, 50, 54, 54, 56, 57, 57, 59, 96, 96, 103, 105, 105, 107, 117, 121, 121, 122, 125, 126, 167,
+//                167, 168, 177, 195, 197, 197, 210, 214, 216, 221, 221, 223, 223), "Charmander & Friends");
+//        starterDeck2 = new Deck(Arrays.asList(3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6,
+//                65, 65, 66, 67, 75, 75, 76, 83, 84, 85, 86, 89, 125, 126, 128, 128, 136, 142, 142, 143, ))
     }
 
     private void populateMoveMap() {
@@ -373,9 +382,9 @@ public class GameData {
     }
 
     private void populateDuelistMap() {
-        duelistMap.put(1, new Duelist(1, "Ronald", "Legendary", EMPTY_LIST, null, Gender.MALE, 6, true));
-        duelistMap.put(2, new Duelist(2, "Ronald", "Legendary", EMPTY_LIST, null, Gender.MALE, 6, true));
-        duelistMap.put(3, new Duelist(3, "Ronald", "Legendary", EMPTY_LIST, null, Gender.MALE, 6, true));
+        duelistMap.put(1, new Duelist(1, "Ronald", new Deck(EMPTY_LIST, "Legendary"), null, Gender.MALE, 6, true));
+        duelistMap.put(2, new Duelist(2, "Ronald", new Deck(EMPTY_LIST, "Legendary"), null, Gender.MALE, 6, true));
+        duelistMap.put(3, new Duelist(3, "Ronald", new Deck(EMPTY_LIST, "Legendary"), null, Gender.MALE, 6, true));
     }
 
     private void populateCardMap() {
@@ -611,6 +620,14 @@ public class GameData {
 
     public List<Move> getAllMoves() {
         return new ArrayList<>(moveMap.values());
+    }
+
+    public List<UsableMove> getAllUsableMoves() {
+        return moveMap.values().stream().filter(x -> x instanceof UsableMove).map(x -> (UsableMove) x).collect(Collectors.toList());
+    }
+
+    public List<PokemonPower> getAllPokemonPowers() {
+        return moveMap.values().stream().filter(x -> x instanceof PokemonPower).map(x -> (PokemonPower) x).collect(Collectors.toList());
     }
 
     public List<Duelist> getAllDuelists() {
