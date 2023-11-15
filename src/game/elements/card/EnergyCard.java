@@ -1,14 +1,25 @@
 package game.elements.card;
 
+import constants.Type;
+
 public class EnergyCard extends Card {
 
+    private Type type;
+
     public EnergyCard() {
-        cardID = 0;
-        hex = "00";
-        name = null;
+        super();
     }
 
-    public EnergyCard(int cardID, String hex, String name) {
+    public EnergyCard(int cardID, String hex, String name, Type type) {
         super(cardID, hex, name);
+        this.type = type;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 }

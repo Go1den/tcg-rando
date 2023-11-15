@@ -7,6 +7,7 @@ import java.util.Random;
 
 import static randomizer.duelist.RandomizePrizes.randomizePrizes;
 import static randomizer.move.RandomizeMoveCost.randomizeMoveCost;
+import static randomizer.pokemon.RandomizeDeck.getRandomizedStarterDeck;
 import static randomizer.pokemon.RandomizeHP.randomizeHP;
 import static randomizer.pokemon.RandomizeResistance.randomizeResistance;
 import static randomizer.pokemon.RandomizeRetreatCost.randomizeRetreatCost;
@@ -38,6 +39,8 @@ public class Randomizer {
 
         Logger.log(gameData, seed);
         Logger.logPatchNotes(gameData, seed);
+
+        getRandomizedStarterDeck(gameData, random);
     }
 
 //    private List<Card> getRandomizedDeck(GameData gameData, Random random, TypeSet typeSet) {

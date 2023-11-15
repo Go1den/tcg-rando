@@ -18,19 +18,14 @@ public class GameData {
     private Map<Integer, Move> moveMap = new HashMap<>();
     private Map<Integer, Duelist> duelistMap = new HashMap<>();
     private Map<Integer, Card> cardMap = new HashMap<>();
-//    private Deck starterDeck1;
-//    private Deck starterDeck2;
-//    private Deck starterDeck3;
+    private Deck starterDeck1;
+    private Deck starterDeck2;
+    private Deck starterDeck3;
 
     public GameData() {
         populateMoveMap();
         populateDuelistMap();
         populateCardMap();
-//        starterDeck1 = new Deck(Arrays.asList(2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5,
-//                48, 48, 49, 50, 54, 54, 56, 57, 57, 59, 96, 96, 103, 105, 105, 107, 117, 121, 121, 122, 125, 126, 167,
-//                167, 168, 177, 195, 197, 197, 210, 214, 216, 221, 221, 223, 223), "Charmander & Friends");
-//        starterDeck2 = new Deck(Arrays.asList(3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6,
-//                65, 65, 66, 67, 75, 75, 76, 83, 84, 85, 86, 89, 125, 126, 128, 128, 136, 142, 142, 143, ))
     }
 
     private void populateMoveMap() {
@@ -388,13 +383,13 @@ public class GameData {
     }
 
     private void populateCardMap() {
-        cardMap.put(1, new EnergyCard(1, "01", "Grass Energy"));
-        cardMap.put(2, new EnergyCard(2, "02", "Fire Energy"));
-        cardMap.put(3, new EnergyCard(3, "03", "Water Energy"));
-        cardMap.put(4, new EnergyCard(4, "04", "Lightning Energy"));
-        cardMap.put(5, new EnergyCard(5, "05", "Fighting Energy"));
-        cardMap.put(6, new EnergyCard(6, "06", "Psychic Energy"));
-        cardMap.put(7, new EnergyCard(7, "07", "Double Colorless Energy"));
+        cardMap.put(1, new EnergyCard(1, "01", "Grass Energy", Type.GRASS));
+        cardMap.put(2, new EnergyCard(2, "02", "Fire Energy", Type.FIRE));
+        cardMap.put(3, new EnergyCard(3, "03", "Water Energy", Type.WATER));
+        cardMap.put(4, new EnergyCard(4, "04", "Lightning Energy", Type.ELECTRIC));
+        cardMap.put(5, new EnergyCard(5, "05", "Fighting Energy", Type.FIGHTING));
+        cardMap.put(6, new EnergyCard(6, "06", "Psychic Energy", Type.PSYCHIC));
+        cardMap.put(7, new EnergyCard(7, "07", "Double Colorless Energy", Type.COLORLESS));
         cardMap.put(8, new PokemonCard(8, "08", "Bulbasaur", 13, 1, 40, moveMap.get(1), null, Type.GRASS, Type.FIRE, Type.NONE, new MoveCost("*"), EMPTY_LIST, singletonList(9), false));
         cardMap.put(9, new PokemonCard(9, "09", "Ivysaur", 20, 2, 60, moveMap.get(2), moveMap.get(3), Type.GRASS, Type.FIRE, Type.NONE, new MoveCost("*"), singletonList(8), Arrays.asList(10, 11), false));
         cardMap.put(10, new PokemonCard(10, "0A", "Venusaur", 64, 3, 100, moveMap.get(320), moveMap.get(4), Type.GRASS, Type.FIRE, Type.NONE, new MoveCost("**"), singletonList(9), EMPTY_LIST, false));
@@ -658,6 +653,16 @@ public class GameData {
         return trainerCards;
     }
 
+    public List<EnergyCard> getAllEnergyCards() {
+        List<EnergyCard> energyCards = new ArrayList<>();
+        for (Card card : cardMap.values()) {
+            if (card instanceof EnergyCard) {
+                energyCards.add((EnergyCard) card);
+            }
+        }
+        return energyCards;
+    }
+
     public Map<Integer, Move> getMoveMap() {
         return moveMap;
     }
@@ -668,6 +673,30 @@ public class GameData {
 
     public Map<Integer, Card> getCardMap() {
         return cardMap;
+    }
+
+    public Deck getStarterDeck1() {
+        return starterDeck1;
+    }
+
+    public void setStarterDeck1(Deck starterDeck1) {
+        this.starterDeck1 = starterDeck1;
+    }
+
+    public Deck getStarterDeck2() {
+        return starterDeck2;
+    }
+
+    public void setStarterDeck2(Deck starterDeck2) {
+        this.starterDeck2 = starterDeck2;
+    }
+
+    public Deck getStarterDeck3() {
+        return starterDeck3;
+    }
+
+    public void setStarterDeck3(Deck starterDeck3) {
+        this.starterDeck3 = starterDeck3;
     }
 
     public int getMaxEvolution(PokemonCard card) {

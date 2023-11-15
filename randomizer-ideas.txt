@@ -2,6 +2,7 @@ Game Settings
     -Starter decks
         -Randomize
         -Keep the same
+    -Start the player with 10 of each energy card to reduce farming?
 
 Cards
     -Randomize Moves
