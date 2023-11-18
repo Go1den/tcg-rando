@@ -1,6 +1,6 @@
 package randomizer.duelist;
 
-import constants.settings.Prizes;
+import constants.settings.PrizeEnum;
 import game.elements.Duelist;
 import game.elements.GameData;
 
@@ -8,10 +8,10 @@ import java.util.Random;
 
 public class RandomizePrizes {
 
-    public static void randomizePrizes(GameData gameData, Prizes prizes, Random random, int regularPrizes, int bossPrizes) {
-        if (Prizes.RANDOM.equals(prizes)) {
+    public static void randomizePrizes(GameData gameData, PrizeEnum prizes, Random random, int regularPrizes, int bossPrizes) {
+        if (PrizeEnum.RANDOM.equals(prizes)) {
             randomizeAllPrizes(gameData, random);
-        } else if (Prizes.SPECIFY.equals(prizes)) {
+        } else if (PrizeEnum.SPECIFY.equals(prizes)) {
             setPrizesByBattleType(gameData, regularPrizes, bossPrizes);
         }
     }

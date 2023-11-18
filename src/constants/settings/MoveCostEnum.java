@@ -1,6 +1,6 @@
 package constants.settings;
 
-public enum PokemonMoveCost {
+public enum MoveCostEnum {
 
     DO_NOT_CHANGE("Do Not Change"),
     RANDOM_PRESERVE_TOTAL_COST_AND_TYPE("Random, Preserving Total Cost and Mindful of Type"),
@@ -10,7 +10,7 @@ public enum PokemonMoveCost {
 
     private final String text;
 
-    PokemonMoveCost(String text) {
+    MoveCostEnum(String text) {
         this.text = text;
     }
 

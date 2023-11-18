@@ -1,6 +1,6 @@
 package constants.settings;
 
-public enum Weakness {
+public enum PokemonTypeEnum {
 
     DO_NOT_CHANGE("Do Not Change"),
     RANDOM_BY_EVOLUTION("Random, But Same For Pokemon in Same Evolution Series"),
@@ -8,7 +8,7 @@ public enum Weakness {
 
     private final String text;
 
-    Weakness(String text) {
+    PokemonTypeEnum(String text) {
         this.text = text;
     }
 

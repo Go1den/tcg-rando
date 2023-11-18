@@ -1,14 +1,13 @@
 package constants.settings;
 
-public enum RetreatCost {
+public enum HPEnum {
 
     DO_NOT_CHANGE("Do Not Change"),
-    RANDOM_PRESERVE_TYPE("Random, But Mindful of Type"),
-    RANDOM("Randomize All");
+    RANDOM_BY_STAGE("Random, Proportional to Evolution Stage");
 
     private final String text;
 
-    RetreatCost(String text) {
+    HPEnum(String text) {
         this.text = text;
     }
 

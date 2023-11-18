@@ -1,6 +1,6 @@
 package constants.settings;
 
-public enum Prizes {
+public enum PrizeEnum {
 
     DO_NOT_CHANGE("Do Not Change"),
     SPECIFY("Specify"),
@@ -8,7 +8,7 @@ public enum Prizes {
 
     private final String text;
 
-    Prizes(String text) {
+    PrizeEnum(String text) {
         this.text = text;
     }
 

@@ -618,11 +618,11 @@ public class GameData {
     }
 
     public List<UsableMove> getAllUsableMoves() {
-        return moveMap.values().stream().filter(x -> x instanceof UsableMove).map(x -> (UsableMove) x).collect(Collectors.toList());
+        return moveMap.values().stream().filter(UsableMove.class::isInstance).map(x -> (UsableMove) x).collect(Collectors.toList());
     }
 
     public List<PokemonPower> getAllPokemonPowers() {
-        return moveMap.values().stream().filter(x -> x instanceof PokemonPower).map(x -> (PokemonPower) x).collect(Collectors.toList());
+        return moveMap.values().stream().filter(PokemonPower.class::isInstance).map(x -> (PokemonPower) x).collect(Collectors.toList());
     }
 
     public List<Duelist> getAllDuelists() {

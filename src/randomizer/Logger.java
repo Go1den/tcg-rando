@@ -29,10 +29,10 @@ public class Logger {
 //        System.out.println();
 //        for (PokemonCard card : gameData.getAllPokemonCards()) {
 //            System.out.println(card.getName()
-//                    + ", " + card.getHp() + "HP"
+//                    + ", " + card.getHp() + "HPEnum"
 //                    + ", Type: " + card.getType().getTypeName()
-//                    + ", Weakness: " + card.getWeakness().getTypeName()
-//                    + ", Resistance: " + card.getResistance().getTypeName()
+//                    + ", WeaknessEnum: " + card.getWeakness().getTypeName()
+//                    + ", ResistanceEnum: " + card.getResistance().getTypeName()
 //                    + ", Retreat Cost: " + card.getRetreatCost().toString());
 //        }
 //
@@ -40,7 +40,7 @@ public class Logger {
 //        System.out.println("Duelists:");
 //        System.out.println();
 //        for (Duelist duelist : gameData.getAllDuelists()) {
-//            System.out.println(duelist.getName() + ", " + "Prizes: " + duelist.getPrizes());
+//            System.out.println(duelist.getName() + ", " + "PrizeEnum: " + duelist.getPrizes());
 //        }
     }
 
@@ -61,19 +61,33 @@ public class Logger {
         System.out.println("Pokemon Cards:");
         System.out.println();
         for (PokemonCard card : gameData.getAllPokemonCards()) {
+            String move1;
+            String move2;
+            if (card.getMove1() instanceof UsableMove) {
+                move1 = ((UsableMove) card.getMove1()).getMoveCost().toString() + " " + card.getMove1().getName();
+            } else {
+                move1 = "PKMN POWER " + card.getMove1().getName();
+            }
+            if (card.getMove2() instanceof UsableMove) {
+                move2 = ((UsableMove) card.getMove2()).getMoveCost().toString() + " " + card.getMove2().getName();
+            } else {
+                move2 = "PKMN POWER " + card.getMove2().getName();
+            }
             System.out.println(card.getName()
-                    + ", " + card.getHp() + "HP"
+                    + ", " + card.getHp() + "HPEnum"
                     + ", Type: " + card.getType().getTypeName()
-                    + ", Weakness: " + card.getWeakness().getTypeName()
-                    + ", Resistance: " + card.getResistance().getTypeName()
-                    + ", Retreat Cost: " + card.getRetreatCost().toString());
+                    + ", WeaknessEnum: " + card.getWeakness().getTypeName()
+                    + ", ResistanceEnum: " + card.getResistance().getTypeName()
+                    + ", Retreat Cost: " + card.getRetreatCost().toString()
+                    + ", Move 1: " + move1
+                    + ", Move 2: " + move2);
         }
 
         System.out.println();
         System.out.println("Duelists:");
         System.out.println();
         for (Duelist duelist : gameData.getAllDuelists()) {
-            System.out.println(duelist.getName() + ", " + "Prizes: " + duelist.getPrizes());
+            System.out.println(duelist.getName() + ", " + "PrizeEnum: " + duelist.getPrizes());
         }
     }
 }

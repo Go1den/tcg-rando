@@ -1,13 +1,14 @@
 package constants.settings;
 
-public enum HP {
+public enum ResistanceEnum {
 
     DO_NOT_CHANGE("Do Not Change"),
-    RANDOM_BY_STAGE("Random, Proportional to Evolution Stage");
+    RANDOM_BY_EVOLUTION("Random, But Same For Pokemon in Same Evolution Series"),
+    RANDOM("Randomize All");
 
     private final String text;
 
-    HP(String text) {
+    ResistanceEnum(String text) {
         this.text = text;
     }
 

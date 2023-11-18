@@ -1,7 +1,7 @@
 package randomizer.pokemon;
 
 import constants.Type;
-import constants.settings.PokemonType;
+import constants.settings.PokemonTypeEnum;
 import game.elements.GameData;
 import game.elements.card.PokemonCard;
 
@@ -14,10 +14,10 @@ import static randomizer.utilites.Utilities.getRandomNonColorlessType;
 
 public class RandomizeType {
 
-    public static void randomizeType(GameData gameData, Random random, PokemonType type) {
-        if (PokemonType.RANDOM.equals(type)) {
+    public static void randomizeType(GameData gameData, Random random, PokemonTypeEnum type) {
+        if (PokemonTypeEnum.RANDOM.equals(type)) {
             randomizeTypeAtCardLevel(gameData, random);
-        } else if (PokemonType.RANDOM_BY_EVOLUTION.equals(type)) {
+        } else if (PokemonTypeEnum.RANDOM_BY_EVOLUTION.equals(type)) {
             randomizeTypeByEvolutionSeries(gameData, random);
         }
     }

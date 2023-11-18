@@ -1,7 +1,7 @@
 package randomizer.pokemon;
 
 import constants.Type;
-import constants.settings.Resistance;
+import constants.settings.ResistanceEnum;
 import game.elements.GameData;
 import game.elements.card.PokemonCard;
 
@@ -14,8 +14,8 @@ import static randomizer.utilites.Utilities.getRandomNonColorlessType;
 
 public class RandomizeResistance {
 
-    public static void randomizeResistance(GameData gameData, Random random, Resistance resistance, int noResistancePercent) {
-        switch (resistance) {
+    public static void randomizeResistance(GameData gameData, Random random, ResistanceEnum resistanceEnum, int noResistancePercent) {
+        switch (resistanceEnum) {
             case RANDOM:
                 randomizeResistanceAtCardLevel(gameData, random, noResistancePercent);
                 break;

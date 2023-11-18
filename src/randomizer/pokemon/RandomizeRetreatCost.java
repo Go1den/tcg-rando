@@ -1,6 +1,6 @@
 package randomizer.pokemon;
 
-import constants.settings.RetreatCost;
+import constants.settings.RetreatCostEnum;
 import game.elements.GameData;
 import game.elements.MoveCost;
 import game.elements.card.PokemonCard;
@@ -9,10 +9,10 @@ import java.util.Random;
 
 public class RandomizeRetreatCost {
 
-    public static void randomizeRetreatCost(GameData gameData, Random random, RetreatCost retreatCost) {
-        if (RetreatCost.RANDOM.equals(retreatCost)) {
+    public static void randomizeRetreatCost(GameData gameData, Random random, RetreatCostEnum retreatCostEnum) {
+        if (RetreatCostEnum.RANDOM.equals(retreatCostEnum)) {
             randomizeRetreatCosts(gameData, random);
-        } else if (RetreatCost.RANDOM_PRESERVE_TYPE.equals(retreatCost)) {
+        } else if (RetreatCostEnum.RANDOM_PRESERVE_TYPE.equals(retreatCostEnum)) {
             randomizeRetreatCostsRespectingType(gameData, random);
         }
     }

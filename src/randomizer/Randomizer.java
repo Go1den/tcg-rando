@@ -9,6 +9,7 @@ import static randomizer.duelist.RandomizePrizes.randomizePrizes;
 import static randomizer.move.RandomizeMoveCost.randomizeMoveCost;
 import static randomizer.pokemon.RandomizeDeck.getRandomizedStarterDeck;
 import static randomizer.pokemon.RandomizeHP.randomizeHP;
+import static randomizer.pokemon.RandomizeMoves.randomizeMoves;
 import static randomizer.pokemon.RandomizeResistance.randomizeResistance;
 import static randomizer.pokemon.RandomizeRetreatCost.randomizeRetreatCost;
 import static randomizer.pokemon.RandomizeType.randomizeType;
@@ -25,20 +26,21 @@ public class Randomizer {
         Random random = new Random(seed);
 
         //Randomize Move stuff
-        randomizeMoveCost(gameData, random, PokemonMoveCost.RANDOM_PRESERVE_TOTAL_COST_AND_TYPE);
+        randomizeMoveCost(gameData, random, MoveCostEnum.RANDOM_PRESERVE_TOTAL_COST_AND_TYPE);
 
         //Randomize Pokemon stuff
-        randomizeHP(gameData, random, HP.RANDOM_BY_STAGE);
-        randomizeType(gameData, random, PokemonType.RANDOM_BY_EVOLUTION);
-        randomizeWeakness(gameData, random, Weakness.RANDOM_BY_EVOLUTION, 10);
-        randomizeResistance(gameData, random, Resistance.RANDOM_BY_EVOLUTION, 25);
-        randomizeRetreatCost(gameData, random, RetreatCost.RANDOM_PRESERVE_TYPE); //must randomize type before retreat cost
+        randomizeHP(gameData, random, HPEnum.RANDOM_BY_STAGE);
+        randomizeType(gameData, random, PokemonTypeEnum.RANDOM_BY_EVOLUTION);
+        randomizeMoves(gameData, random, MoveEnum.RANDOM);
+        randomizeWeakness(gameData, random, WeaknessEnum.RANDOM_BY_EVOLUTION, 10);
+        randomizeResistance(gameData, random, ResistanceEnum.RANDOM_BY_EVOLUTION, 25);
+        randomizeRetreatCost(gameData, random, RetreatCostEnum.RANDOM_PRESERVE_TYPE); //must randomize type before retreat cost
 
         //Randomize Duelist stuff
-        randomizePrizes(gameData, Prizes.RANDOM, random, 0, 0);
+        randomizePrizes(gameData, PrizeEnum.RANDOM, random, 0, 0);
 
         Logger.log(gameData, seed);
-        Logger.logPatchNotes(gameData, seed);
+//        Logger.logPatchNotes(gameData, seed);
 
         getRandomizedStarterDeck(gameData, random);
     }

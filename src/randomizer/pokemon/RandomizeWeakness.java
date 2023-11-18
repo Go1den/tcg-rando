@@ -1,13 +1,11 @@
 package randomizer.pokemon;
 
 import constants.Type;
-import constants.settings.Weakness;
+import constants.settings.WeaknessEnum;
 import game.elements.GameData;
-import game.elements.TypeSet;
 import game.elements.card.PokemonCard;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -16,10 +14,10 @@ import static randomizer.utilites.Utilities.getRandomNonColorlessType;
 
 public class RandomizeWeakness {
 
-    public static void randomizeWeakness(GameData gameData, Random random, Weakness weakness, int noWeaknessPercent) {
-        if (Weakness.RANDOM.equals(weakness)) {
+    public static void randomizeWeakness(GameData gameData, Random random, WeaknessEnum weaknessEnum, int noWeaknessPercent) {
+        if (WeaknessEnum.RANDOM.equals(weaknessEnum)) {
             randomizeWeaknessAtCardLevel(gameData, random, noWeaknessPercent);
-        } else if (Weakness.RANDOM_BY_EVOLUTION.equals(weakness)) {
+        } else if (WeaknessEnum.RANDOM_BY_EVOLUTION.equals(weaknessEnum)) {
             randomizeWeaknessByEvolutionSeries(gameData, random, noWeaknessPercent);
         }
     }

@@ -1,15 +1,15 @@
 package randomizer.move;
 
 import constants.Type;
-import constants.settings.PokemonMoveCost;
+import constants.settings.MoveCostEnum;
 import game.elements.*;
 
 import java.util.Random;
 
 public class RandomizeMoveCost {
 
-    public static void randomizeMoveCost(GameData gameData, Random random, PokemonMoveCost pokemonMoveCost) {
-        switch (pokemonMoveCost) {
+    public static void randomizeMoveCost(GameData gameData, Random random, MoveCostEnum moveCostEnum) {
+        switch (moveCostEnum) {
             case RANDOM:
                 randomizeMoveCosts(gameData, random);
                 break;

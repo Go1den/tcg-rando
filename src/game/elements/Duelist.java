@@ -2,9 +2,6 @@ package game.elements;
 
 import constants.BoosterPack;
 import constants.Gender;
-import game.elements.card.Card;
-
-import java.util.List;
 
 public class Duelist {
 

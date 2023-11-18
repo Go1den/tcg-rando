@@ -16,7 +16,7 @@ Cards
         -Keep move slots the same
     -Randomize Move Damage
         -Yikes
-    -It is possible to have no weakness (rare) or no resistance (much more common)
+    -It is possible to have no weaknessEnum (rare) or no resistanceEnum (much more common)
 
 Trainer Settings
     -Randomize trainer names
@@ -61,13 +61,13 @@ Pokemon Settings
         -Random, but keep the same in the same evolution chain
         -Keep type the same
     -Randomize Weakness
-        -Random weakness with % chance for no weakness
+        -Random weaknessEnum with % chance for no weaknessEnum
         -Random, but keep the same in the same evolution chain
-        -Keep weakness the same
+        -Keep weaknessEnum the same
     -Randomize Resistance
-        -Random resistance with % chance for no resistance
+        -Random resistanceEnum with % chance for no resistanceEnum
         -Random, but keep the same in the same evolution chain
-        -Keep resistance the same
+        -Keep resistanceEnum the same
     -Randomize Retreat Costs
         -Totally random
         -Totally random, but keeping Pokemon type in mind
