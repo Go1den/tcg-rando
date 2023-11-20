@@ -30,7 +30,7 @@ public class Randomizer {
 
         //Randomize Pokemon stuff
         randomizeHP(gameData, random, HPEnum.RANDOM_BY_STAGE);
-        randomizeType(gameData, random, PokemonTypeEnum.RANDOM_BY_EVOLUTION);
+        randomizeType(gameData, random, PokemonTypeEnum.RANDOM_BY_EVOLUTION); //must do before move randomization
         randomizeMoves(gameData, random, MoveEnum.RANDOM);
         randomizeWeakness(gameData, random, WeaknessEnum.RANDOM_BY_EVOLUTION, 10);
         randomizeResistance(gameData, random, ResistanceEnum.RANDOM_BY_EVOLUTION, 25);

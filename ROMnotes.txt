@@ -1,0 +1,4 @@
+ROM addresses
+
+036300 - Beginning of all game text
+0649A0 - End of all game text

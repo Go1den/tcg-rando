@@ -6,7 +6,6 @@ Game Settings
 
 Cards
     -Randomize Moves
-        -Totally random
         -Moves of same type/evolution level, but not necessarily same type
         -Moves with same energy cost and type
         -Keep moves the same
@@ -72,6 +71,8 @@ Pokemon Settings
         -Totally random
         -Totally random, but keeping Pokemon type in mind
         -Keep retreat costs the same
+    -Randomize Moves
+        -Totally random
 
 Duel Settings
     -Randomize prize count (leaders)
