@@ -613,6 +613,93 @@ public class GameData {
         cardMap.put(228, new TrainerCard(228, "E4", "Recycle", false, false, true, false, false));
     }
 
+    public List<Move> getAllMovesOfType(Type type, boolean includeColorless) {
+        List<Move> result = new ArrayList<>();
+        switch (type) {
+            case FIRE:
+                result.addAll(getAllFireMoves());
+                break;
+            case WATER:
+                result.addAll(getAllWaterMoves());
+                break;
+            case ELECTRIC:
+                result.addAll(getAllElectricMoves());
+                break;
+            case FIGHTING:
+                result.addAll(getAllFightingMoves());
+                break;
+            case PSYCHIC:
+                result.addAll(getAllPsychicMoves());
+                break;
+            case GRASS:
+                result.addAll(getAllGrassMoves());
+                break;
+            default:
+                result.addAll(getAllColorlessMoves());
+                break;
+        }
+        if (!Type.COLORLESS.equals(type) && includeColorless) {
+            result.addAll(getAllColorlessMoves());
+        }
+        return result;
+    }
+
+    public List<Move> getAllFireMoves() {
+        return moveMap.values().stream()
+                .filter(x ->
+                (x instanceof PokemonPower && Type.FIRE.equals(((PokemonPower) x).getOriginalPokemonType())) ||
+                        (x instanceof UsableMove && ((UsableMove) x).getMoveCost().getFire() > 0))
+                .collect(Collectors.toList());
+    }
+
+    public List<Move> getAllWaterMoves() {
+        return moveMap.values().stream()
+                .filter(x ->
+                        (x instanceof PokemonPower && Type.WATER.equals(((PokemonPower) x).getOriginalPokemonType())) ||
+                                (x instanceof UsableMove && ((UsableMove) x).getMoveCost().getWater() > 0))
+                .collect(Collectors.toList());
+    }
+
+    public List<Move> getAllElectricMoves() {
+        return moveMap.values().stream()
+                .filter(x ->
+                        (x instanceof PokemonPower && Type.ELECTRIC.equals(((PokemonPower) x).getOriginalPokemonType())) ||
+                                (x instanceof UsableMove && ((UsableMove) x).getMoveCost().getElectric() > 0))
+                .collect(Collectors.toList());
+    }
+
+    public List<Move> getAllFightingMoves() {
+        return moveMap.values().stream()
+                .filter(x ->
+                        (x instanceof PokemonPower && Type.FIGHTING.equals(((PokemonPower) x).getOriginalPokemonType())) ||
+                                (x instanceof UsableMove && ((UsableMove) x).getMoveCost().getFighting() > 0))
+                .collect(Collectors.toList());
+    }
+
+    public List<Move> getAllPsychicMoves() {
+        return moveMap.values().stream()
+                .filter(x ->
+                        (x instanceof PokemonPower && Type.PSYCHIC.equals(((PokemonPower) x).getOriginalPokemonType())) ||
+                                (x instanceof UsableMove && ((UsableMove) x).getMoveCost().getPsychic() > 0))
+                .collect(Collectors.toList());
+    }
+
+    public List<Move> getAllGrassMoves() {
+        return moveMap.values().stream()
+                .filter(x ->
+                        (x instanceof PokemonPower && Type.GRASS.equals(((PokemonPower) x).getOriginalPokemonType())) ||
+                                (x instanceof UsableMove && ((UsableMove) x).getMoveCost().getGrass() > 0))
+                .collect(Collectors.toList());
+    }
+
+    public List<Move> getAllColorlessMoves() {
+        return moveMap.values().stream()
+                .filter(x ->
+                        (x instanceof PokemonPower && Type.COLORLESS.equals(((PokemonPower) x).getOriginalPokemonType())) ||
+                                (x instanceof UsableMove && ((UsableMove) x).getMoveCost().getColorless() > 0 && ((UsableMove) x).getMoveCost().getColorless() == ((UsableMove) x).getMoveCost().getTotalCost()))
+                .collect(Collectors.toList());
+    }
+
     public List<Move> getAllMoves() {
         return new ArrayList<>(moveMap.values());
     }

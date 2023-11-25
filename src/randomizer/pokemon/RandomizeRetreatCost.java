@@ -19,7 +19,7 @@ public class RandomizeRetreatCost {
 
     private static void randomizeRetreatCosts(GameData gameData, Random random) {
         for (PokemonCard card : gameData.getAllPokemonCards()) {
-            int rng = random.nextInt(100) + 1;
+            int rng = random.nextInt(100);
             if (rng <= 5) {
                 card.setRetreatCost(new MoveCost());
             } else if (rng <= 45) {

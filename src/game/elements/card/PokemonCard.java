@@ -165,4 +165,10 @@ public class PokemonCard extends Card {
     public void setEvolvesFromFossil(boolean evolvesFromFossil) {
         this.evolvesFromFossil = evolvesFromFossil;
     }
+
+    public int getNumberOfMoves() {
+        int a = move1 != null ? 1 : 0;
+        int b = move2 != null? 1 : 0;
+        return a + b;
+    }
 }

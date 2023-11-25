@@ -200,7 +200,7 @@ public class MoveCost {
         return resultBuilder.toString();
     }
 
-    private int getTotalCost() {
+    public int getTotalCost() {
         return fire + water + electric + fighting + psychic + grass + colorless;
     }
 }

@@ -8,14 +8,9 @@ Cards
     -Randomize Moves
         -Moves of same type/evolution level, but not necessarily same type
         -Moves with same energy cost and type
-        -Keep moves the same
-    -Randomize Move Slots
-        -Totally random
-            -Customize odds of 1 or 2 moves
-        -Keep move slots the same
     -Randomize Move Damage
         -Yikes
-    -It is possible to have no weaknessEnum (rare) or no resistanceEnum (much more common)
+    -Keep move slots the same
 
 Trainer Settings
     -Randomize trainer names
@@ -63,16 +58,20 @@ Pokemon Settings
         -Random weaknessEnum with % chance for no weaknessEnum
         -Random, but keep the same in the same evolution chain
         -Keep weaknessEnum the same
+        -It is possible to have no weaknessEnum (rare)
     -Randomize Resistance
         -Random resistanceEnum with % chance for no resistanceEnum
         -Random, but keep the same in the same evolution chain
         -Keep resistanceEnum the same
+        -It is possible to have no resistanceEnum (much more common)
     -Randomize Retreat Costs
         -Totally random
         -Totally random, but keeping Pokemon type in mind
         -Keep retreat costs the same
     -Randomize Moves
         -Totally random
+            -% chance to have 1 move instead of 2
+        -Keep moves the same
 
 Duel Settings
     -Randomize prize count (leaders)

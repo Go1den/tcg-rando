@@ -29,7 +29,7 @@ public class RandomizeWeakness {
             if (updatedCardIDs.contains(card.getCardID())) {
                 continue;
             }
-            int rng = random.nextInt(100) + 1;
+            int rng = random.nextInt(101);
             type = rng > noWeaknessPercent ? getRandomNonColorlessType(random) : Type.NONE;
             List<Integer> evolutionChainIDs = new ArrayList<>();
             evolutionChainIDs.add(card.getCardID());
