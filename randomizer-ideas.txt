@@ -6,17 +6,17 @@ Game Settings
 
 Cards
     -Randomize Moves
-        -Moves of same type/evolution level, but not necessarily same type
+        -Moves of same type/evolution level, but not necessarily same type //what???
         -Moves with same energy cost and type
     -Randomize Move Damage
         -Yikes
     -Keep move slots the same
 
 Trainer Settings
-    -Randomize trainer names
+    -Randomize trainer names (low priority)
         -Totally random (by gender)
         -Keep trainer names the same
-    -Randomize deck names
+    -Randomize deck names (low priority)
         -Totally random
         -Shuffle existing deck names
         -Shuffle existing deck names, but keep type in mind
